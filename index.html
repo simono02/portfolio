@@ -1,0 +1,403 @@
+!DOCTYPE html
+html lang=en
+head
+meta charset=UTF-8
+meta name=viewport content=width=device-width, initial-scale=1.0
+titleSimon Kiarie Kuria  Full-Stack Developertitle
+link href=httpsfonts.googleapis.comcss2family=Space+Groteskwght@400;500;600;700&family=JetBrains+Monowght@400;700&display=swap rel=stylesheet
+style
+{margin0;padding0;box-sizingborder-box;}
+root{
+  --bg#0d1117;
+  --bg2#0a0f16;
+  --bg3#111827;
+  --card#161b22;
+  --border#21262d;
+  --accent#00d4ff;
+  --accent2#0099bb;
+  --text#e6edf3;
+  --muted#8b949e;
+  --green#39d353;
+}
+html{scroll-behaviorsmooth;}
+body{backgroundvar(--bg);colorvar(--text);font-family'Space Grotesk',sans-serif;line-height1.6;overflow-xhidden;}
+a{colorvar(--accent);text-decorationnone;}
+
+ NAV 
+nav{positionfixed;top0;width100%;backgroundrgba(13,17,23,0.95);backdrop-filterblur(12px);border-bottom1px solid var(--border);z-index1000;padding1rem 2rem;displayflex;justify-contentspace-between;align-itemscenter;}
+.nav-logo{font-family'JetBrains Mono',monospace;font-size1.1rem;font-weight700;colorvar(--accent);}
+.nav-links{displayflex;gap2rem;}
+.nav-links a{colorvar(--muted);font-size0.9rem;transitioncolor 0.2s;positionrelative;}
+.nav-links aafter{content'';positionabsolute;bottom-4px;left0;width0;height1px;backgroundvar(--accent);transitionwidth 0.2s;}
+.nav-links ahover{colorvar(--accent);}
+.nav-links ahoverafter{width100%;}
+
+ SECTIONS 
+section{padding6rem 2rem;max-width1000px;margin0 auto;}
+
+ HERO 
+.hero{min-height100vh;displayflex;align-itemscenter;justify-contentcenter;text-aligncenter;padding-top5rem;positionrelative;}
+.herobefore{content'';positionfixed;top0;left0;right0;bottom0;backgroundradial-gradient(ellipse at 20% 50%,rgba(0,212,255,0.05) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(0,85,255,0.05) 0%,transparent 60%);pointer-eventsnone;z-index0;}
+.hero-content{positionrelative;z-index1;}
+.hero-avatar{width130px;height130px;border-radius50%;backgroundlinear-gradient(135deg,#00d4ff,#0055ff);displayflex;align-itemscenter;justify-contentcenter;font-size2.5rem;font-weight700;color#fff;margin0 auto 2rem;border3px solid rgba(0,212,255,0.4);box-shadow0 0 40px rgba(0,212,255,0.15);}
+.hero-tag{font-family'JetBrains Mono',monospace;font-size0.8rem;colorvar(--accent);margin-bottom1rem;letter-spacing2px;}
+.hero h1{font-size3.2rem;font-weight700;margin-bottom0.5rem;line-height1.1;}
+.hero h1 span{colorvar(--accent);}
+.hero-role{font-size1rem;colorvar(--muted);margin-bottom1.5rem;font-family'JetBrains Mono',monospace;}
+.hero-desc{font-size1rem;colorvar(--muted);max-width580px;margin0 auto 2rem;line-height1.8;}
+.badge-row{displayflex;flex-wrapwrap;gap0.5rem;justify-contentcenter;margin-bottom2.5rem;}
+.badge{backgroundrgba(0,212,255,0.08);border1px solid rgba(0,212,255,0.25);colorvar(--accent);padding0.3rem 0.9rem;border-radius20px;font-size0.78rem;font-family'JetBrains Mono',monospace;}
+.badge.green{backgroundrgba(57,211,83,0.08);border-colorrgba(57,211,83,0.25);colorvar(--green);}
+.btn-row{displayflex;gap1rem;justify-contentcenter;flex-wrapwrap;}
+.btn{padding0.75rem 1.8rem;border-radius8px;font-size0.9rem;font-weight600;cursorpointer;transitionall 0.2s;bordernone;font-family'Space Grotesk',sans-serif;}
+.btn-primary{backgroundvar(--accent);color#000;}
+.btn-primaryhover{backgroundvar(--accent2);transformtranslateY(-2px);}
+.btn-outline{backgroundtransparent;colorvar(--accent);border1px solid rgba(0,212,255,0.4);}
+.btn-outlinehover{backgroundrgba(0,212,255,0.08);transformtranslateY(-2px);}
+
+ SECTION HEADER 
+.section-header{margin-bottom3rem;}
+.section-tag{font-family'JetBrains Mono',monospace;font-size0.75rem;colorvar(--accent);letter-spacing2px;margin-bottom0.5rem;}
+.section-title{font-size2rem;font-weight700;}
+.section-title span{colorvar(--accent);}
+.section-line{width40px;height2px;backgroundvar(--accent);border-radius2px;margin-top0.8rem;}
+
+ ABOUT 
+.about-grid{displaygrid;grid-template-columns1fr 1fr;gap3rem;align-itemsstart;}
+.about-text p{colorvar(--muted);margin-bottom1.2rem;line-height1.9;font-size0.95rem;}
+.info-card{backgroundvar(--card);border1px solid var(--border);border-radius12px;padding1.5rem;}
+.info-row{displayflex;justify-contentspace-between;align-itemscenter;padding0.7rem 0;border-bottom1px solid var(--border);font-size0.88rem;}
+.info-rowlast-child{border-bottomnone;}
+.info-label{colorvar(--muted);font-family'JetBrains Mono',monospace;font-size0.78rem;}
+.info-value{colorvar(--text);font-weight500;}
+.info-value.accent{colorvar(--accent);}
+.status-dot{displayinline-block;width7px;height7px;backgroundvar(--green);border-radius50%;margin-right6px;animationpulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity1;}50%{opacity0.3;}}
+
+ SKILLS 
+.skills-grid{displaygrid;grid-template-columnsrepeat(auto-fit,minmax(210px,1fr));gap1rem;}
+.skill-category{backgroundvar(--card);border1px solid var(--border);border-radius12px;padding1.3rem;}
+.skill-category h4{colorvar(--accent);font-size0.72rem;text-transformuppercase;letter-spacing2px;margin-bottom1rem;font-family'JetBrains Mono',monospace;}
+.skill-tags{displayflex;flex-wrapwrap;gap0.4rem;}
+.skill-tag{backgroundvar(--bg3);border1px solid var(--border);colorvar(--text);padding0.28rem 0.65rem;border-radius6px;font-size0.78rem;}
+
+ SERVICES 
+.services-grid{displaygrid;grid-template-columnsrepeat(auto-fit,minmax(220px,1fr));gap1.2rem;}
+.service-card{backgroundvar(--card);border1px solid var(--border);border-radius12px;padding1.6rem;transitionborder-color 0.25s,transform 0.25s;}
+.service-cardhover{border-colorvar(--accent);transformtranslateY(-4px);}
+.service-icon{font-size1.8rem;margin-bottom1rem;}
+.service-card h3{font-size0.95rem;margin-bottom0.5rem;font-weight600;}
+.service-card p{colorvar(--muted);font-size0.82rem;line-height1.7;}
+
+ PROJECTS 
+.projects-grid{displaygrid;grid-template-columnsrepeat(auto-fit,minmax(280px,1fr));gap1.2rem;}
+.project-card{backgroundvar(--card);border1px solid var(--border);border-radius12px;padding1.5rem;transitionborder-color 0.25s,transform 0.25s;displayflex;flex-directioncolumn;}
+.project-cardhover{border-colorvar(--accent);transformtranslateY(-4px);}
+.project-top{displayflex;justify-contentspace-between;align-itemsstart;margin-bottom0.7rem;}
+.project-card h3{font-size0.95rem;font-weight600;}
+.project-arrow{colorvar(--muted);font-size1rem;transitioncolor 0.2s;}
+.project-cardhover .project-arrow{colorvar(--accent);}
+.project-card p{colorvar(--muted);font-size0.82rem;line-height1.7;margin-bottom1rem;flex1;}
+.project-tags{displayflex;flex-wrapwrap;gap0.4rem;}
+.project-tag{backgroundrgba(0,212,255,0.07);border1px solid rgba(0,212,255,0.2);colorvar(--accent);padding0.2rem 0.55rem;border-radius4px;font-size0.72rem;font-family'JetBrains Mono',monospace;}
+
+ CONTACT 
+.contact-grid{displaygrid;grid-template-columns1fr 1fr;gap2.5rem;}
+.contact-info h3{font-size1.1rem;margin-bottom0.8rem;}
+.contact-infop{colorvar(--muted);font-size0.88rem;margin-bottom1.5rem;line-height1.8;}
+.contact-item{displayflex;align-itemscenter;gap0.9rem;padding0.9rem 1rem;backgroundvar(--card);border1px solid var(--border);border-radius10px;margin-bottom0.7rem;transitionborder-color 0.2s;}
+.contact-itemhover{border-colorvar(--accent);}
+.contact-icon{width38px;height38px;border-radius8px;backgroundrgba(0,212,255,0.08);displayflex;align-itemscenter;justify-contentcenter;font-size1rem;flex-shrink0;}
+.contact-label{font-size0.88rem;font-weight500;}
+.contact-sub{font-size0.76rem;colorvar(--muted);}
+.contact-form{backgroundvar(--card);border1px solid var(--border);border-radius12px;padding1.8rem;}
+.form-group{margin-bottom1.1rem;}
+.form-group label{displayblock;colorvar(--muted);font-size0.78rem;margin-bottom0.4rem;font-family'JetBrains Mono',monospace;letter-spacing1px;}
+.form-group input,.form-group textarea{width100%;backgroundvar(--bg3);border1px solid var(--border);colorvar(--text);padding0.75rem 1rem;border-radius8px;font-size0.88rem;font-family'Space Grotesk',sans-serif;outlinenone;transitionborder-color 0.2s;}
+.form-group inputfocus,.form-group textareafocus{border-colorvar(--accent);}
+.form-group textarea{height110px;resizevertical;}
+.btn-send{width100%;padding0.85rem;border-radius8px;backgroundvar(--accent);color#000;font-weight700;font-size0.9rem;bordernone;cursorpointer;font-family'Space Grotesk',sans-serif;transitionall 0.2s;}
+.btn-sendhover{backgroundvar(--accent2);color#fff;transformtranslateY(-2px);}
+
+ FOOTER 
+footer{text-aligncenter;padding2.5rem 2rem;border-top1px solid var(--border);colorvar(--muted);font-size0.82rem;}
+footer span{colorvar(--accent);}
+
+ SCROLL ANIMATION 
+.reveal{opacity0;transformtranslateY(30px);transitionopacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity1;transformnone;}
+
+@media(max-width768px){
+  .about-grid,.contact-grid{grid-template-columns1fr;}
+  .hero h1{font-size2.2rem;}
+  nav{padding1rem 1.2rem;}
+  .nav-links{gap1.2rem;}
+  section{padding4rem 1.2rem;}
+}
+style
+head
+body
+
+nav
+  div class=nav-logo&lt;SKK &gt;div
+  div class=nav-links
+    a href=#aboutAbouta
+    a href=#skillsSkillsa
+    a href=#servicesServicesa
+    a href=#projectsProjectsa
+    a href=#contactContacta
+  div
+nav
+
+!-- HERO --
+section class=hero id=home
+  div class=hero-content
+    div class=hero-avatarSKdiv
+    p class=hero-tag FULL-STACK DEVELOPERp
+    h1Simon spanKiariespan Kuriah1
+    p class=hero-roleReact · Django · Python · AI · Automationp
+    p class=hero-descI build powerful web apps, mobile applications, AI-powered systems, and automated solutions that solve real business problems — from Kenya to the world.p
+    div class=badge-row
+      span class=badge green● Available for Hirespan
+      span class=badgeOpen to Freelancespan
+      span class=badgeBased in Kenya 🇰🇪span
+      span class=badgeWorking Worldwidespan
+    div
+    div class=btn-row
+      a href=#contactbutton class=btn btn-primaryHire Me →buttona
+      a href=#projectsbutton class=btn btn-outlineView Projectsbuttona
+    div
+  div
+section
+
+!-- ABOUT --
+section id=about
+  div class=section-header reveal
+    p class=section-tag 01. ABOUTp
+    h2 class=section-titleWho spanAm Ispanh2
+    div class=section-linediv
+  div
+  div class=about-grid
+    div class=about-text reveal
+      pHi! I'm Simon, a passionate Full-Stack Developer with 3 years of hands-on experience building modern digital solutions. I specialize in transforming ideas into fully functional, scalable systems.p
+      pFrom crafting beautiful frontend interfaces with React to building robust Django backends and integrating AI capabilities — I handle the full spectrum of software development.p
+      pI'm driven by solving real-world problems through code, whether it's automating repetitive business tasks, integrating payment systems, or building AI-powered tools that save time and money.p
+    div
+    div class=info-card reveal
+      div class=info-rowspan class=info-labelNamespanspan class=info-valueSimon Kiarie Kuriaspandiv
+      div class=info-rowspan class=info-labelLocationspanspan class=info-valueKenya 🇰🇪spandiv
+      div class=info-rowspan class=info-labelExperiencespanspan class=info-value3+ Yearsspandiv
+      div class=info-rowspan class=info-labelEmailspanspan class=info-value accentkuriasimon002@gmail.comspandiv
+      div class=info-rowspan class=info-labelGitHubspanspan class=info-value accentsimono02spandiv
+      div class=info-rowspan class=info-labelStatusspanspan class=info-valuespan class=status-dotspanAvailable for hirespandiv
+    div
+  div
+section
+
+!-- SKILLS --
+section id=skills
+  div class=section-header reveal
+    p class=section-tag 02. SKILLSp
+    h2 class=section-titleTech spanStackspanh2
+    div class=section-linediv
+  div
+  div class=skills-grid
+    div class=skill-category reveal
+      h4Frontendh4
+      div class=skill-tags
+        span class=skill-tagReactspan
+        span class=skill-tagJavaScriptspan
+        span class=skill-tagHTML5span
+        span class=skill-tagCSS3span
+      div
+    div
+    div class=skill-category reveal
+      h4Backendh4
+      div class=skill-tags
+        span class=skill-tagPythonspan
+        span class=skill-tagDjangospan
+        span class=skill-tagREST APIsspan
+        span class=skill-tagPostgreSQLspan
+      div
+    div
+    div class=skill-category reveal
+      h4AI & Automationh4
+      div class=skill-tags
+        span class=skill-tagOpenAI APIspan
+        span class=skill-tagClaude APIspan
+        span class=skill-tagPython Scriptsspan
+        span class=skill-tagAutomationspan
+      div
+    div
+    div class=skill-category reveal
+      h4Payments & Toolsh4
+      div class=skill-tags
+        span class=skill-tagStripespan
+        span class=skill-tagPayPalspan
+        span class=skill-tagGitspan
+        span class=skill-tagGitHubspan
+        span class=skill-tagVS Codespan
+      div
+    div
+  div
+section
+
+!-- SERVICES --
+section id=services
+  div class=section-header reveal
+    p class=section-tag 03. SERVICESp
+    h2 class=section-titleWhat I spanOfferspanh2
+    div class=section-linediv
+  div
+  div class=services-grid
+    div class=service-card reveal
+      div class=service-icon🌐div
+      h3Web Applicationsh3
+      pFull-stack web apps with React frontends and Django backends. Fast, secure, and scalable.p
+    div
+    div class=service-card reveal
+      div class=service-icon📱div
+      h3Mobile Applicationsh3
+      pCross-platform mobile apps that work seamlessly on both Android and iOS devices.p
+    div
+    div class=service-card reveal
+      div class=service-icon🤖div
+      h3AI Integrationsh3
+      pIntegrate powerful AI capabilities into your business using OpenAI and Claude APIs.p
+    div
+    div class=service-card reveal
+      div class=service-icon⚙️div
+      h3Automation Systemsh3
+      pPython-powered automation scripts that eliminate repetitive tasks and save hours daily.p
+    div
+    div class=service-card reveal
+      div class=service-icon💳div
+      h3Payment Integrationsh3
+      pSeamless Stripe and PayPal integrations for your e-commerce or SaaS platform.p
+    div
+    div class=service-card reveal
+      div class=service-icon📊div
+      h3Custom Dashboardsh3
+      pRole-based admin dashboards with real-time data, analytics, and full control panels.p
+    div
+  div
+section
+
+!-- PROJECTS --
+section id=projects
+  div class=section-header reveal
+    p class=section-tag 04. PROJECTSp
+    h2 class=section-titleFeatured spanWorkspanh2
+    div class=section-linediv
+  div
+  div class=projects-grid
+    div class=project-card reveal
+      div class=project-top
+        h3Writers Platformh3
+        span class=project-arrow↗span
+      div
+      pA full-stack platform for managing writers, projects, payments, and staff with role-based access control.p
+      div class=project-tags
+        span class=project-tagDjangospan
+        span class=project-tagPostgreSQLspan
+        span class=project-tagPythonspan
+      div
+    div
+    div class=project-card reveal
+      div class=project-top
+        h3Hospital Management Systemh3
+        span class=project-arrow↗span
+      div
+      pComplete HMS with patient records, appointments, billing, and staff management modules.p
+      div class=project-tags
+        span class=project-tagDjangospan
+        span class=project-tagReactspan
+        span class=project-tagPostgreSQLspan
+      div
+    div
+    div class=project-card reveal
+      div class=project-top
+        h3Water Billing Systemh3
+        span class=project-arrow↗span
+      div
+      pAutomated water billing management with meter reading, invoicing, and payment tracking.p
+      div class=project-tags
+        span class=project-tagPythonspan
+        span class=project-tagDjangospan
+        span class=project-tagPostgreSQLspan
+      div
+    div
+    div class=project-card reveal
+      div class=project-top
+        h3Mobile Security Platformh3
+        span class=project-arrow↗span
+      div
+      pSecurity monitoring platform for mobile devices with real-time alerts and threat detection.p
+      div class=project-tags
+        span class=project-tagPythonspan
+        span class=project-tagReactspan
+        span class=project-tagAIspan
+      div
+    div
+  div
+section
+
+!-- CONTACT --
+section id=contact
+  div class=section-header reveal
+    p class=section-tag 05. CONTACTp
+    h2 class=section-titleGet In spanTouchspanh2
+    div class=section-linediv
+  div
+  div class=contact-grid
+    div class=contact-info reveal
+      h3Let's build something great togetherh3
+      pI'm currently available for freelance projects and full-time roles. Feel free to reach out anytime!p
+      div class=contact-item
+        div class=contact-icon✉️div
+        divdiv class=contact-labelkuriasimon002@gmail.comdivdiv class=contact-subEmail me anytimedivdiv
+      div
+      div class=contact-item
+        div class=contact-icon💼div
+        divdiv class=contact-labelLinkedIndivdiv class=contact-subsimon-kuria-38986334adivdiv
+      div
+      div class=contact-item
+        div class=contact-icon🐙div
+        divdiv class=contact-labelGitHubdivdiv class=contact-subsimono02divdiv
+      div
+      div class=contact-item
+        div class=contact-icon📍div
+        divdiv class=contact-labelKenya 🇰🇪divdiv class=contact-subAvailable worldwide remotelydivdiv
+      div
+    div
+    div class=contact-form reveal
+      div class=form-group
+        labelYour Namelabel
+        input type=text placeholder=John Doe
+      div
+      div class=form-group
+        labelEmail Addresslabel
+        input type=email placeholder=john@example.com
+      div
+      div class=form-group
+        labelMessagelabel
+        textarea placeholder=Tell me about your project...textarea
+      div
+      button class=btn-send onclick=alert('Thanks! Simon will get back to you soon.')Send Message →button
+    div
+  div
+section
+
+footer
+  pDesigned & Built by spanSimon Kiarie Kuriaspan &nbsp;·&nbsp; Kenya 🇰🇪 &nbsp;·&nbsp; 2025p
+footer
+
+script
+const observer = new IntersectionObserver((entries) = {
+  entries.forEach(e = { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+}, {threshold 0.1});
+document.querySelectorAll('.reveal').forEach(el = observer.observe(el));
+script
+
+body
+html

@@ -6,102 +6,38 @@
 <title>Simon Kiarie Kuria — Full-Stack Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
-
 <style>
-/* ============================================================
-   THEMES
-   ============================================================ */
+/* ============================================================ THEMES */
 :root{
-  --gold:#D4A843;
-  --gold2:#F2C96B;
-  --gold3:#B8860B;
-  --gold-glow:rgba(212,168,67,0.15);
-  --gold-dim:rgba(212,168,67,0.25);
-  --gold-shine:rgba(242,201,107,0.4);
-  --green:#4ade80;
-  --red:#f87171;
-  --radius:4px;
-  --transition:0.3s cubic-bezier(0.16,1,0.3,1);
+  --gold:#D4A843;--gold2:#F2C96B;--gold3:#B8860B;
+  --gold-glow:rgba(212,168,67,0.15);--gold-dim:rgba(212,168,67,0.25);--gold-shine:rgba(242,201,107,0.4);
+  --green:#4ade80;--red:#f87171;--radius:4px;--transition:0.3s cubic-bezier(0.16,1,0.3,1);
 }
-
-[data-theme="dark"]{
-  --bg:#080A0F;--bg2:#0E1118;--bg3:#141720;
-  --surface:#1A1E2C;--surface2:#222636;
-  --line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.13);
-  --text:#E8E4D8;--text2:#B0ADA2;--muted:#6B6E7A;--heading:#F5F2EA;
-}
-[data-theme="light"]{
-  --bg:#F8F5EE;--bg2:#F0EDE4;--bg3:#E8E4DA;
-  --surface:#FFFFFF;--surface2:#F5F2EC;
-  --line:rgba(0,0,0,0.08);--line2:rgba(0,0,0,0.14);
-  --text:#2A2520;--text2:#5A5450;--muted:#9A9590;--heading:#1A1510;
-}
-[data-theme="noir"]{
-  --bg:#000000;--bg2:#080808;--bg3:#111111;
-  --surface:#161616;--surface2:#1E1E1E;
-  --line:rgba(255,255,255,0.05);--line2:rgba(255,255,255,0.1);
-  --text:#D0C9B8;--text2:#888070;--muted:#444040;--heading:#E8E0CC;
-  --gold:#C8963C;--gold2:#E8B050;
-}
-[data-theme="aurora"]{
-  --bg:#0A0618;--bg2:#0F0A22;--bg3:#150E2A;
-  --surface:#1A1230;--surface2:#201838;
-  --line:rgba(180,120,255,0.1);--line2:rgba(180,120,255,0.18);
-  --text:#E0D8F5;--text2:#A09AC0;--muted:#605880;--heading:#F0E8FF;
-  --gold:#E8B860;--gold2:#F5D080;
-  --gold-glow:rgba(232,184,96,0.15);--gold-dim:rgba(232,184,96,0.25);
-}
-
+[data-theme="dark"]{--bg:#080A0F;--bg2:#0E1118;--bg3:#141720;--surface:#1A1E2C;--surface2:#222636;--line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.13);--text:#E8E4D8;--text2:#B0ADA2;--muted:#6B6E7A;--heading:#F5F2EA;}
+[data-theme="light"]{--bg:#F8F5EE;--bg2:#F0EDE4;--bg3:#E8E4DA;--surface:#FFFFFF;--surface2:#F5F2EC;--line:rgba(0,0,0,0.08);--line2:rgba(0,0,0,0.14);--text:#2A2520;--text2:#5A5450;--muted:#9A9590;--heading:#1A1510;}
+[data-theme="noir"]{--bg:#000000;--bg2:#080808;--bg3:#111111;--surface:#161616;--surface2:#1E1E1E;--line:rgba(255,255,255,0.05);--line2:rgba(255,255,255,0.1);--text:#D0C9B8;--text2:#888070;--muted:#444040;--heading:#E8E0CC;--gold:#C8963C;--gold2:#E8B050;}
+[data-theme="aurora"]{--bg:#0A0618;--bg2:#0F0A22;--bg3:#150E2A;--surface:#1A1230;--surface2:#201838;--line:rgba(180,120,255,0.1);--line2:rgba(180,120,255,0.18);--text:#E0D8F5;--text2:#A09AC0;--muted:#605880;--heading:#F0E8FF;--gold:#E8B860;--gold2:#F5D080;--gold-glow:rgba(232,184,96,0.15);--gold-dim:rgba(232,184,96,0.25);}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;font-size:16px;}
-body{
-  background:var(--bg);color:var(--text);
-  font-family:'Space Grotesk',sans-serif;font-weight:300;
-  line-height:1.7;overflow-x:hidden;cursor:none;
-  transition:background var(--transition),color var(--transition);
-}
-a{color:inherit;text-decoration:none;}
-button{cursor:none;font-family:inherit;}
-img{display:block;max-width:100%;}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;cursor:none;transition:background var(--transition),color var(--transition);}
+a{color:inherit;text-decoration:none;}button{cursor:none;font-family:inherit;}
 ::selection{background:var(--gold-dim);color:var(--gold2);}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:0.4;mix-blend-mode:overlay;}
 
-body::before{
-  content:'';position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:9998;opacity:0.4;mix-blend-mode:overlay;
-}
-
-#cursor{
-  position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;
-  pointer-events:none;z-index:99999;transform:translate(-50%,-50%);
-  transition:transform 0.1s;box-shadow:0 0 12px var(--gold),0 0 24px var(--gold-glow);
-}
-#cursor-ring{
-  position:fixed;width:40px;height:40px;border:1.5px solid var(--gold);border-radius:50%;
-  pointer-events:none;z-index:99998;transform:translate(-50%,-50%);opacity:0.4;
-  transition:width 0.3s,height 0.3s,opacity 0.3s;
-}
+/* CURSOR */
+#cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s;box-shadow:0 0 12px var(--gold),0 0 24px var(--gold-glow);}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);opacity:0.4;transition:width 0.3s,height 0.3s,opacity 0.3s;}
 body.cursor-hover #cursor-ring{width:64px;height:64px;opacity:0.7;}
 body.cursor-hover #cursor{transform:translate(-50%,-50%) scale(1.8);}
 
-/* ============================================================
-   CONTROLS
-   ============================================================ */
-#controls{
-  position:fixed;top:0;width:100%;z-index:1000;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:0.9rem 2.5rem;background:rgba(8,10,15,0.0);
-  backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all 0.4s;
-}
+/* PROGRESS BAR */
+#progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold3),var(--gold),var(--gold2));z-index:9999;width:0;transition:width 0.1s;}
+
+/* CONTROLS */
+#controls{position:fixed;top:0;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:0.9rem 2.5rem;background:rgba(8,10,15,0.0);backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all 0.4s;}
 #controls.scrolled{background:rgba(8,10,15,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--line);}
 [data-theme="light"] #controls.scrolled{background:rgba(248,245,238,0.92);}
-[data-theme="aurora"] #controls.scrolled{background:rgba(10,6,24,0.92);}
-[data-theme="noir"] #controls.scrolled{background:rgba(0,0,0,0.95);}
-
-.nav-logo{
-  font-family:'Playfair Display',serif;font-weight:900;font-size:1.15rem;
-  color:var(--heading);display:flex;align-items:center;gap:0.5rem;letter-spacing:0.01em;
-}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.15rem;color:var(--heading);display:flex;align-items:center;gap:0.5rem;letter-spacing:0.01em;}
 .logo-gem{width:10px;height:10px;background:linear-gradient(135deg,var(--gold2),var(--gold3));transform:rotate(45deg);box-shadow:0 0 10px var(--gold-shine);}
 .nav-center{display:flex;gap:2rem;align-items:center;}
 .nav-center a{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);position:relative;transition:color 0.25s;}
@@ -112,28 +48,21 @@ body.cursor-hover #cursor{transform:translate(-50%,-50%) scale(1.8);}
 .theme-switcher{display:flex;gap:0.3rem;background:var(--surface);border:1px solid var(--line2);border-radius:var(--radius);padding:0.3rem;}
 .theme-btn{width:26px;height:26px;border-radius:2px;border:1px solid transparent;cursor:none;transition:all 0.2s;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--muted);background:transparent;}
 .theme-btn.active{border-color:var(--gold);color:var(--gold);background:var(--gold-glow);}
-.theme-btn:hover{color:var(--gold2);}
-.lang-switcher{display:flex;gap:0.3rem;background:var(--surface);border:1px solid var(--line2);border-radius:var(--radius);padding:0.3rem;}
-.lang-btn{padding:0.3rem 0.7rem;border-radius:2px;border:1px solid transparent;cursor:none;font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);background:transparent;transition:all 0.2s;}
-.lang-btn.active{border-color:var(--gold);color:var(--gold);background:var(--gold-glow);}
-.lang-btn:hover{color:var(--gold2);}
 .hire-btn{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--bg);background:linear-gradient(135deg,var(--gold),var(--gold2));padding:0.55rem 1.3rem;border-radius:var(--radius);font-weight:500;border:none;transition:all 0.2s;box-shadow:0 4px 20px var(--gold-glow);}
 .hire-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--gold-shine);}
 
-/* ============================================================
-   HERO
-   ============================================================ */
+/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;padding:0 2.5rem;position:relative;overflow:hidden;}
 .hero::after{content:'';position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,0.08) 0%,transparent 65%);top:-200px;right:-200px;pointer-events:none;}
 .hero-orb2{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,0.05) 0%,transparent 70%);bottom:-100px;left:-100px;pointer-events:none;}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 60% 40%, black 20%, transparent 75%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 60% 40%,black 20%,transparent 75%);}
 .hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;padding-top:5rem;}
 .hero-badge{display:inline-flex;align-items:center;gap:0.7rem;background:var(--gold-glow);border:1px solid var(--gold-dim);padding:0.4rem 1.1rem;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:2.2rem;}
 .badge-pulse{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease infinite;}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,0.5);}50%{box-shadow:0 0 0 8px rgba(74,222,128,0);}}
 .hero-name{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,7vw,7rem);font-weight:900;line-height:0.95;letter-spacing:-0.02em;color:var(--heading);margin-bottom:0.5rem;}
 .hero-name em{color:var(--gold);font-style:italic;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;}
-.hero-tagline{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--text2);letter-spacing:0.1em;margin:1.8rem 0 1rem;display:flex;align-items:center;gap:0.8rem;}
+.hero-tagline{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--text2);letter-spacing:0.1em;margin:1.8rem 0 1rem;display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;}
 .tagline-sep{color:var(--gold-dim);}
 .hero-desc{font-size:1rem;color:var(--text2);max-width:520px;line-height:2;margin-bottom:2.5rem;}
 .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;}
@@ -141,7 +70,6 @@ body.cursor-hover #cursor{transform:translate(-50%,-50%) scale(1.8);}
 .btn-gold:hover{transform:translateY(-4px);box-shadow:0 16px 50px var(--gold-shine);}
 .btn-outline{display:inline-flex;align-items:center;gap:0.6rem;background:transparent;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2rem;border-radius:var(--radius);border:1px solid var(--line2);transition:all var(--transition);}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-4px);}
-
 .hero-card{background:var(--surface);border:1px solid var(--line2);border-radius:8px;padding:2rem;position:relative;overflow:hidden;}
 .hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),var(--gold),transparent);}
 .hero-card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,var(--gold-glow),transparent 60%);pointer-events:none;}
@@ -157,21 +85,17 @@ body.cursor-hover #cursor{transform:translate(-50%,-50%) scale(1.8);}
 .chip:hover{border-color:var(--gold-dim);color:var(--gold);}
 .card-avail{display:flex;align-items:center;gap:0.6rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--green);position:relative;z-index:1;}
 
-/* ============================================================
-   MARQUEE
-   ============================================================ */
+/* MARQUEE */
 .marquee-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.1rem 0;overflow:hidden;background:var(--bg2);position:relative;}
 .marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:200px;z-index:2;}
 .marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent);}
 .marquee-wrap::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent);}
-.marquee-track{display:flex;gap:0;animation:march 35s linear infinite;white-space:nowrap;}
+.marquee-track{display:flex;animation:march 40s linear infinite;white-space:nowrap;}
 @keyframes march{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 .mitem{display:flex;align-items:center;gap:0.5rem;padding:0 2rem;font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);flex-shrink:0;}
 .mitem-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 
-/* ============================================================
-   SECTIONS
-   ============================================================ */
+/* SECTIONS */
 .section{padding:8rem 2.5rem;max-width:1280px;margin:0 auto;}
 .section-full{padding:8rem 2.5rem;width:100%;}
 .section-inner{max-width:1280px;margin:0 auto;}
@@ -180,9 +104,7 @@ body.cursor-hover #cursor{transform:translate(-50%,-50%) scale(1.8);}
 .section-h{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,4rem);font-weight:900;letter-spacing:-0.02em;color:var(--heading);line-height:1.05;margin-bottom:1rem;}
 .section-h em{font-style:italic;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 
-/* ============================================================
-   ABOUT
-   ============================================================ */
+/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 400px;gap:6rem;align-items:start;}
 .about-text p{color:var(--text2);font-size:1rem;line-height:2.1;margin-bottom:1.5rem;}
 .about-text strong{color:var(--text);font-weight:600;}
@@ -201,9 +123,7 @@ body.cursor-hover #cursor{transform:translate(-50%,-50%) scale(1.8);}
 .ic-val.green{color:var(--green);display:flex;align-items:center;gap:0.5rem;}
 .ic-val.green span{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
 
-/* ============================================================
-   SKILLS
-   ============================================================ */
+/* SKILLS */
 .skills-outer{background:var(--bg2);}
 .skills-layout{display:grid;grid-template-columns:260px 1fr;gap:3.5rem;align-items:start;margin-top:3rem;}
 .skills-nav-col{position:sticky;top:7rem;}
@@ -219,9 +139,7 @@ body.cursor-hover #cursor{transform:translate(-50%,-50%) scale(1.8);}
 .pill:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 20px var(--gold-glow);}
 .pill-gem{width:6px;height:6px;border-radius:1px;background:linear-gradient(135deg,var(--gold),var(--gold2));transform:rotate(45deg);flex-shrink:0;}
 
-/* ============================================================
-   SERVICES
-   ============================================================ */
+/* SERVICES */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:4rem;}
 .svc{background:var(--bg2);padding:2.5rem 2rem;position:relative;overflow:hidden;transition:background 0.3s;}
 .svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),transparent);transform:scaleX(0);transition:transform 0.4s;}
@@ -234,129 +152,82 @@ body.cursor-hover #cursor{transform:translate(-50%,-50%) scale(1.8);}
 .svc-chips{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:1.2rem;}
 .svc-chip{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--gold);background:var(--gold-glow);border:1px solid var(--gold-dim);padding:0.2rem 0.6rem;border-radius:2px;}
 
-/* ============================================================
-   PROJECTS — enhanced with screenshot support
-   ============================================================ */
+/* PROJECTS */
+.proj-filter{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.filter-btn{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 1rem;border-radius:var(--radius);border:1px solid var(--line2);background:transparent;color:var(--muted);cursor:none;transition:all 0.2s;}
+.filter-btn.active,.filter-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-glow);}
 .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
 .proj{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2rem;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:all 0.35s;}
 .proj::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold-glow),transparent 50%);opacity:0;transition:opacity 0.4s;pointer-events:none;}
 .proj:hover{border-color:rgba(212,168,67,0.4);transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,0.3);}
 .proj:hover::before{opacity:1;}
+.proj[data-hidden="true"]{display:none;}
 
-/* Screenshot thumbnail */
-.proj-screenshot{
-  width:100%;height:160px;border-radius:4px;overflow:hidden;
-  margin-bottom:1.2rem;border:1px solid var(--line2);
-  background:var(--bg3);position:relative;cursor:none;
-  flex-shrink:0;
-}
-.proj-screenshot img{
-  width:100%;height:100%;object-fit:cover;object-position:top left;
-  transition:transform 0.6s cubic-bezier(0.16,1,0.3,1),object-position 0.6s;
-  display:block;
-}
-.proj:hover .proj-screenshot img{transform:scale(1.04);object-position:top center;}
-.proj-screenshot .screen-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(8,10,15,0.5) 0%,transparent 40%);
-  display:flex;align-items:flex-end;padding:0.6rem;
-  opacity:0;transition:opacity 0.3s;
-}
-.proj:hover .proj-screenshot .screen-overlay{opacity:1;}
-.screen-badge{
-  font-family:'JetBrains Mono',monospace;font-size:0.58rem;
-  letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--gold);background:rgba(8,10,15,0.85);
-  border:1px solid var(--gold-dim);border-radius:2px;padding:0.2rem 0.5rem;
-}
+/* Screenshot gallery per project */
+.proj-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:1.2rem;border-radius:4px;overflow:hidden;}
+.proj-gallery.two-up{grid-template-columns:1fr 1fr;}
+.proj-gallery.one-up{grid-template-columns:1fr;}
+.gal-thumb{position:relative;overflow:hidden;border-radius:3px;cursor:zoom-in;background:var(--bg3);aspect-ratio:16/9;}
+.gal-thumb img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);}
+.gal-thumb:hover img{transform:scale(1.06);}
+.gal-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,10,15,0.55) 0%,transparent 50%);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:0.4rem;}
+.gal-thumb:hover .gal-overlay{opacity:1;}
+.gal-label{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:rgba(8,10,15,0.85);border:1px solid var(--gold-dim);border-radius:2px;padding:0.15rem 0.4rem;}
+.no-screenshot{display:flex;align-items:center;justify-content:center;background:var(--bg3);border:1px dashed var(--line2);border-radius:4px;padding:2rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--muted);letter-spacing:0.1em;text-align:center;line-height:1.8;}
 
-/* Lightbox */
-.lightbox{
-  position:fixed;inset:0;z-index:99990;
-  background:rgba(4,5,10,0.96);
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;transition:opacity 0.3s;
-  padding:2rem;
-}
-.lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{
-  max-width:90vw;max-height:85vh;border-radius:6px;
-  border:1px solid var(--gold-dim);
-  box-shadow:0 32px 80px rgba(0,0,0,0.8);
-  object-fit:contain;
-}
-.lightbox-close{
-  position:absolute;top:1.5rem;right:1.5rem;
-  width:44px;height:44px;border-radius:50%;
-  background:var(--surface);border:1px solid var(--line2);
-  color:var(--text);font-size:1.2rem;cursor:none;
-  display:flex;align-items:center;justify-content:center;
-  transition:all 0.2s;
-}
-.lightbox-close:hover{border-color:var(--gold);color:var(--gold);}
-.lightbox-caption{
-  position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);
-  font-family:'JetBrains Mono',monospace;font-size:0.7rem;
-  color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;
-  white-space:nowrap;
-}
+/* Featured project */
+.proj.featured{grid-column:span 2;display:grid;grid-template-columns:1fr 380px;gap:2.5rem;padding:2.5rem;}
+.proj.featured .proj-body{display:flex;flex-direction:column;}
+.feat-badge{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+.proj-visual-stack{display:flex;flex-direction:column;gap:6px;}
+.proj-visual{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line2);background:var(--bg3);position:relative;cursor:zoom-in;flex-shrink:0;}
+.proj-visual img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);display:block;}
+.proj:hover .proj-visual img{transform:scale(1.03);}
+.proj-visual-stack .proj-visual:first-child{min-height:180px;height:180px;}
+.proj-visual-stack .proj-visual:not(:first-child){height:80px;}
+.vstack-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.vstack-row .proj-visual{height:80px;}
+.proj-visual .screen-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,10,15,0.6) 0%,transparent 50%);display:flex;align-items:flex-end;padding:0.5rem;opacity:0;transition:opacity 0.3s;}
+.proj-visual:hover .screen-overlay{opacity:1;}
+.screen-badge{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:rgba(8,10,15,0.85);border:1px solid var(--gold-dim);border-radius:2px;padding:0.15rem 0.4rem;}
 
-.proj-top{display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem;}
+/* Project card elements */
+.proj-top{display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem;}
 .proj-idx{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--muted);letter-spacing:0.1em;}
 .proj-links{display:flex;gap:0.5rem;}
 .proj-link{width:32px;height:32px;border:1px solid var(--line2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--muted);transition:all 0.2s;}
 .proj:hover .proj-link{border-color:var(--gold);color:var(--gold);}
-.proj-link:hover{transform:rotate(45deg)!important;}
-.proj h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--heading);margin-bottom:0.6rem;}
+.proj h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--heading);margin-bottom:0.6rem;}
 .proj-live{display:inline-flex;align-items:center;gap:0.4rem;font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--green);margin-bottom:0.8rem;}
 .proj-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+.proj-cli{display:inline-flex;align-items:center;gap:0.4rem;font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.8rem;}
 .proj p{color:var(--text2);font-size:0.86rem;line-height:1.9;flex:1;margin-bottom:1.5rem;}
 .proj-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
 .ptag{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--text2);background:var(--bg3);border:1px solid var(--line);padding:0.25rem 0.6rem;border-radius:2px;}
 
-/* Featured project */
-.proj.featured{grid-column:span 2;display:grid;grid-template-columns:1fr 360px;gap:2.5rem;padding:2.5rem;}
-.proj.featured .proj-body{display:flex;flex-direction:column;}
-.feat-badge{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:99990;background:rgba(4,5,10,0.97);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s;padding:2rem;}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lightbox img{max-width:90vw;max-height:85vh;border-radius:6px;border:1px solid var(--gold-dim);box-shadow:0 32px 80px rgba(0,0,0,0.8);object-fit:contain;}
+.lightbox-close{position:absolute;top:1.5rem;right:1.5rem;width:44px;height:44px;border-radius:50%;background:var(--surface);border:1px solid var(--line2);color:var(--text);font-size:1.2rem;cursor:none;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.lightbox-close:hover{border-color:var(--gold);color:var(--gold);}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:var(--surface);border:1px solid var(--line2);border-radius:50%;color:var(--text);font-size:1.1rem;cursor:none;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.lightbox-nav:hover{border-color:var(--gold);color:var(--gold);}
+#lightboxPrev{left:1.5rem;}#lightboxNext{right:5rem;}
+.lightbox-caption{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;}
+.lightbox-counter{position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--muted);}
 
-/* Featured screenshot replaces the old visual block */
-.proj-visual{
-  border-radius:var(--radius);overflow:hidden;
-  border:1px solid var(--line2);
-  background:var(--bg3);
-  height:100%;min-height:220px;
-  position:relative;cursor:none;
-  flex-shrink:0;
-}
-.proj-visual img{
-  width:100%;height:100%;object-fit:cover;object-position:top left;
-  transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);
-  display:block;
-}
-.proj:hover .proj-visual img{transform:scale(1.03);}
-.proj-visual .screen-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(8,10,15,0.6) 0%,transparent 50%);
-  display:flex;align-items:flex-end;padding:0.8rem;
-  opacity:0;transition:opacity 0.3s;
-}
-.proj:hover .proj-visual .screen-overlay{opacity:1;}
-
-/* ============================================================
-   PROCESS
-   ============================================================ */
+/* PROCESS */
 .process-outer{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%);}
 .process-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:4.5rem;position:relative;}
 .process-row::before{content:'';position:absolute;top:32px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),var(--gold),var(--gold-dim),transparent);z-index:0;}
 .pstep{padding:0 1.5rem;position:relative;z-index:1;text-align:center;}
-.pnum{width:64px;height:64px;border-radius:50%;background:var(--bg);border:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 auto 1.5rem;position:relative;box-shadow:0 0 30px var(--gold-glow);}
-.pnum::before{content:attr(data-n);position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold-dim);background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:-1;}
+.pnum{width:64px;height:64px;border-radius:50%;background:var(--bg);border:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;margin:0 auto 1.5rem;position:relative;box-shadow:0 0 30px var(--gold-glow);}
+.pnum-inner{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .pstep h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--heading);margin-bottom:0.5rem;}
 .pstep p{font-size:0.82rem;color:var(--muted);line-height:1.8;}
 
-/* ============================================================
-   CONTACT
-   ============================================================ */
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem;}
 .contact-lede{font-size:1rem;color:var(--text2);line-height:2;margin-bottom:2rem;}
 .clinks{display:flex;flex-direction:column;gap:0.8rem;}
@@ -382,9 +253,7 @@ body.cursor-hover #cursor{transform:translate(-50%,-50%) scale(1.8);}
 .btn-submit{width:100%;padding:1rem;border-radius:var(--radius);background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0A0800;font-family:'Playfair Display',serif;font-weight:700;font-size:0.95rem;letter-spacing:0.03em;border:none;cursor:none;display:flex;align-items:center;justify-content:center;gap:0.5rem;transition:all var(--transition);margin-top:0.5rem;box-shadow:0 6px 24px var(--gold-glow);}
 .btn-submit:hover{transform:translateY(-3px);box-shadow:0 12px 40px var(--gold-shine);}
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
+/* FOOTER */
 footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:0 auto;}
 .footer-brand{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--heading);}
 .footer-copy{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.1em;}
@@ -393,67 +262,62 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
 .flinks a{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
 .flinks a:hover{color:var(--gold);}
 
-/* ============================================================
-   REVEAL
-   ============================================================ */
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(36px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
 .reveal.in{opacity:1;transform:none;}
-.reveal.d1{transition-delay:0.1s;}
-.reveal.d2{transition-delay:0.2s;}
-.reveal.d3{transition-delay:0.3s;}
-.reveal.d4{transition-delay:0.4s;}
+.reveal.d1{transition-delay:0.1s;}.reveal.d2{transition-delay:0.2s;}.reveal.d3{transition-delay:0.3s;}
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+/* BACK TO TOP */
+#backToTop{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--surface);border:1px solid var(--gold-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--gold);cursor:none;opacity:0;transform:translateY(10px);transition:all 0.3s;z-index:900;}
+#backToTop.show{opacity:1;transform:none;}
+#backToTop:hover{background:var(--gold-glow);transform:translateY(-3px);}
+
+/* STATS TICKER */
+.stats-strip{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:2rem 0;margin:0;}
+.stats-inner{max-width:1280px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:repeat(5,1fr);gap:2rem;}
+.stat-item{text-align:center;}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+.stat-l{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;}
+
+/* RESPONSIVE */
 @media(max-width:1100px){
-  .hero-content{grid-template-columns:1fr;padding-top:7rem;}
-  .hero-card{display:none;}
-  .about-grid{grid-template-columns:1fr;}
-  .contact-grid{grid-template-columns:1fr;}
-  .skills-layout{grid-template-columns:1fr;}
-  .skills-nav-col{position:static;display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem;}
-  .stab{margin-bottom:0;}
-  .svc-grid{grid-template-columns:repeat(2,1fr);}
-  .process-row{grid-template-columns:repeat(2,1fr);gap:2.5rem;}
-  .process-row::before{display:none;}
-  .proj.featured{grid-column:span 1;grid-template-columns:1fr;display:flex;flex-direction:column;}
-  .proj.featured .proj-visual{min-height:200px;height:200px;}
-  .proj-grid{grid-template-columns:1fr;}
+  .hero-content{grid-template-columns:1fr;padding-top:7rem;}.hero-card{display:none;}
+  .about-grid{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}
+  .skills-layout{grid-template-columns:1fr;}.skills-nav-col{position:static;display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem;}.stab{margin-bottom:0;}
+  .svc-grid{grid-template-columns:repeat(2,1fr);}.process-row{grid-template-columns:repeat(2,1fr);gap:2.5rem;}.process-row::before{display:none;}
+  .proj.featured{grid-column:span 1;display:flex;flex-direction:column;}.proj.featured .proj-visual-stack{min-height:200px;}
+  .proj-grid{grid-template-columns:1fr;}.stats-inner{grid-template-columns:repeat(3,1fr);}
 }
 @media(max-width:768px){
-  #controls{padding:1rem 1.2rem;}
-  .nav-center{display:none;}
-  .nav-right{gap:0.4rem;}
-  .lang-switcher{display:none;}
-  .section,.section-full{padding:5rem 1.2rem;}
-  .hero{padding:0 1.2rem;}
-  .about-highlights{grid-template-columns:1fr;}
-  .frow{grid-template-columns:1fr;}
-  .svc-grid{grid-template-columns:1fr;}
+  #controls{padding:1rem 1.2rem;}.nav-center{display:none;}
+  .section,.section-full{padding:5rem 1.2rem;}.hero{padding:0 1.2rem;}
+  .about-highlights{grid-template-columns:1fr;}.frow{grid-template-columns:1fr;}.svc-grid{grid-template-columns:1fr;}
   footer{flex-direction:column;gap:1.5rem;text-align:center;}
-  body{cursor:auto;}
-  #cursor,#cursor-ring{display:none;}
-  .process-row{grid-template-columns:1fr 1fr;}
+  body{cursor:auto;}#cursor,#cursor-ring{display:none;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}.process-row{grid-template-columns:1fr 1fr;}
+  .proj.featured{grid-template-columns:1fr;}
 }
-@media(max-width:480px){.process-row{grid-template-columns:1fr;}}
+@media(max-width:480px){.process-row{grid-template-columns:1fr;}.stats-inner{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
 
+<div id="progress"></div>
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
+<div id="backToTop" title="Back to top">↑</div>
 
-<!-- Lightbox -->
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#x2715;</button>
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <button class="lightbox-nav" id="lightboxPrev" aria-label="Previous">‹</button>
+  <button class="lightbox-nav" id="lightboxNext" aria-label="Next">›</button>
   <img id="lightboxImg" src="" alt="Screenshot preview"/>
   <div class="lightbox-caption" id="lightboxCaption"></div>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
 </div>
 
-<!-- ================================================================
-     CONTROLS
-     ================================================================ -->
+<!-- CONTROLS -->
 <div id="controls">
   <div class="nav-logo"><div class="logo-gem"></div>Simon K. Kuria</div>
   <nav class="nav-center">
@@ -462,6 +326,7 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
   </nav>
   <div class="nav-right">
     <div class="theme-switcher" title="Change theme">
@@ -470,19 +335,11 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
       <button class="theme-btn" data-theme="noir" title="Noir">⬛</button>
       <button class="theme-btn" data-theme="aurora" title="Aurora">🔮</button>
     </div>
-    <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="sw">SW</button>
-      <button class="lang-btn" data-lang="fr">FR</button>
-      <button class="lang-btn" data-lang="de">DE</button>
-    </div>
     <a href="#contact" class="hire-btn">Hire Me</a>
   </div>
 </div>
 
-<!-- ================================================================
-     HERO
-     ================================================================ -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-grid"></div>
   <div class="hero-orb2"></div>
@@ -493,9 +350,10 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
       <div class="hero-tagline">
         <span>Full-Stack Engineer</span><span class="tagline-sep">◆</span>
         <span>AI Systems</span><span class="tagline-sep">◆</span>
-        <span>Cloud &amp; Mobile</span>
+        <span>Cloud &amp; Mobile</span><span class="tagline-sep">◆</span>
+        <span>Go · Elixir</span>
       </div>
-      <p class="hero-desc">I architect and deliver production-grade web platforms, intelligent AI systems, mobile applications, and end-to-end automation pipelines — engineering scalable solutions that solve real operational problems. Based in Nairobi, serving clients globally.</p>
+      <p class="hero-desc">I architect and deliver production-grade web platforms, intelligent AI systems, mobile applications, real-time systems, and end-to-end automation pipelines — engineering scalable solutions that solve real operational problems. Based in Nairobi, serving clients globally.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn-gold">Start a Project →</a>
         <a href="#projects" class="btn-outline">View My Work ↓</a>
@@ -504,19 +362,20 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
     <div class="hero-card">
       <div class="card-avatar">SK</div>
       <div class="card-name">Simon Kiarie Kuria</div>
-      <div class="card-role">// FULL-STACK · MOBILE · AI</div>
+      <div class="card-role">// FULL-STACK · MOBILE · AI · REALTIME</div>
       <div class="card-stats">
         <div class="cstat"><div class="cstat-num">3+</div><div class="cstat-label">Years Exp.</div></div>
-        <div class="cstat"><div class="cstat-num">25+</div><div class="cstat-label">Projects</div></div>
+        <div class="cstat"><div class="cstat-num">14</div><div class="cstat-label">Projects</div></div>
         <div class="cstat"><div class="cstat-num">2</div><div class="cstat-label">Live Products</div></div>
-        <div class="cstat"><div class="cstat-num">8</div><div class="cstat-label">Domains</div></div>
+        <div class="cstat"><div class="cstat-num">10</div><div class="cstat-label">Domains</div></div>
       </div>
       <div class="card-chips">
-        <span class="chip">React</span><span class="chip">Django</span><span class="chip">Flask</span>
-        <span class="chip">C# / .NET</span><span class="chip">Python</span><span class="chip">Azure</span>
-        <span class="chip">PostgreSQL</span><span class="chip">OpenAI</span><span class="chip">Claude API</span>
-        <span class="chip">Stripe</span><span class="chip">M-Pesa</span><span class="chip">Docker</span>
-        <span class="chip">React Native</span><span class="chip">Kotlin</span>
+        <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Vue 3</span>
+        <span class="chip">Django</span><span class="chip">Flask</span><span class="chip">Go / Gin</span>
+        <span class="chip">Elixir / Phoenix</span><span class="chip">C# / .NET</span>
+        <span class="chip">Python</span><span class="chip">Azure</span><span class="chip">PostgreSQL</span>
+        <span class="chip">OpenAI</span><span class="chip">Claude API</span><span class="chip">Stripe</span>
+        <span class="chip">M-Pesa</span><span class="chip">Docker</span><span class="chip">React Native</span>
       </div>
       <div class="card-avail"><span class="badge-pulse"></span><span>Available for hire — Nairobi, KE 🇰🇪</span></div>
     </div>
@@ -526,17 +385,26 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
 <!-- MARQUEE -->
 <div class="marquee-wrap"><div class="marquee-track" id="marqueeTrack"></div></div>
 
-<!-- ================================================================
-     ABOUT
-     ================================================================ -->
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item reveal"><div class="stat-n">14+</div><div class="stat-l">Projects Delivered</div></div>
+    <div class="stat-item reveal d1"><div class="stat-n">3+</div><div class="stat-l">Years Experience</div></div>
+    <div class="stat-item reveal d2"><div class="stat-n">10</div><div class="stat-l">Tech Domains</div></div>
+    <div class="stat-item reveal d3"><div class="stat-n">2</div><div class="stat-l">Live Productions</div></div>
+    <div class="stat-item reveal d1"><div class="stat-n">∞</div><div class="stat-l">Problems Solved</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
 <section class="section" id="about">
   <div class="about-grid">
     <div>
       <div class="eyebrow reveal">01. About</div>
       <h2 class="section-h reveal">Building systems<br/><em>that scale.</em></h2>
       <div class="about-text reveal">
-        <p>I'm Simon — a <strong>Full-Stack Engineer</strong> with 3+ years of experience delivering production-grade digital systems across diverse domains. My work spans the entire software stack: from precision-crafted React interfaces to robust Django, Flask, and <strong>C#/.NET</strong> backend architectures.</p>
-        <p>My technical edge is <strong>breadth with depth</strong>: I architect cloud-native solutions on Azure, design normalized database schemas in PostgreSQL and SQL Server, wire intelligent AI pipelines using OpenAI and Claude, and ship cross-platform mobile apps in React Native and Kotlin.</p>
+        <p>I'm Simon — a <strong>Full-Stack Engineer</strong> with 3+ years of experience delivering production-grade digital systems across diverse domains. My work spans the entire software stack: from precision-crafted React and Vue interfaces to robust Django, Flask, Go, Elixir, and <strong>C#/.NET</strong> backend architectures.</p>
+        <p>My technical edge is <strong>breadth with depth</strong>: I architect cloud-native solutions on Azure, design real-time systems with Phoenix LiveView and WebSockets, build Go CLI tools and Gin APIs, integrate AI pipelines using OpenAI and Claude, and ship cross-platform mobile apps in React Native and Kotlin.</p>
         <p>I'm driven by solving <strong>real operational problems</strong> — automating workflows that save hours every day, building platforms that serve thousands of users reliably, and engineering integrations that unlock measurable revenue. From Nairobi startups to global clients.</p>
       </div>
       <div class="about-highlights reveal">
@@ -560,9 +428,7 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
   </div>
 </section>
 
-<!-- ================================================================
-     SKILLS
-     ================================================================ -->
+<!-- SKILLS -->
 <div class="section-full skills-outer" id="skills">
   <div class="section-inner">
     <div class="eyebrow reveal">02. Tech Stack</div>
@@ -571,6 +437,7 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
       <div class="skills-nav-col reveal">
         <div class="stab active" data-tab="frontend"><span class="stab-icon">🎨</span>Frontend</div>
         <div class="stab" data-tab="backend"><span class="stab-icon">⚙️</span>Backend &amp; APIs</div>
+        <div class="stab" data-tab="go"><span class="stab-icon">🐹</span>Go &amp; Elixir</div>
         <div class="stab" data-tab="csharp"><span class="stab-icon">🔷</span>C# &amp; .NET</div>
         <div class="stab" data-tab="mobile"><span class="stab-icon">📱</span>Mobile Apps</div>
         <div class="stab" data-tab="cloud"><span class="stab-icon">☁️</span>Cloud &amp; DevOps</div>
@@ -581,34 +448,50 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
       <div class="reveal d1">
         <div class="spanel active" id="tab-frontend">
           <div class="spanel-title">Frontend Engineering</div>
-          <div class="spanel-desc">Crafting responsive, performant user interfaces that feel native. Component architecture, state management, and smooth UX — not just making things look good.</div>
+          <div class="spanel-desc">Crafting responsive, performant user interfaces with React, Next.js, and Vue 3. Component architecture, state management, and smooth UX — built right.</div>
           <div class="pills">
-            <div class="pill"><span class="pill-gem"></span>React.js</div>
+            <div class="pill"><span class="pill-gem"></span>React.js &amp; Next.js 14</div>
+            <div class="pill"><span class="pill-gem"></span>Vue 3 &amp; Pinia</div>
             <div class="pill"><span class="pill-gem"></span>JavaScript (ES2022+)</div>
             <div class="pill"><span class="pill-gem"></span>TypeScript</div>
             <div class="pill"><span class="pill-gem"></span>HTML5 &amp; Semantic Markup</div>
             <div class="pill"><span class="pill-gem"></span>CSS3 &amp; Animations</div>
-            <div class="pill"><span class="pill-gem"></span>Responsive Design</div>
-            <div class="pill"><span class="pill-gem"></span>React Router</div>
-            <div class="pill"><span class="pill-gem"></span>Redux / Zustand</div>
-            <div class="pill"><span class="pill-gem"></span>Axios &amp; Fetch API</div>
             <div class="pill"><span class="pill-gem"></span>Tailwind CSS</div>
-            <div class="pill"><span class="pill-gem"></span>Figma (handoff)</div>
+            <div class="pill"><span class="pill-gem"></span>Redux / Zustand / Pinia</div>
+            <div class="pill"><span class="pill-gem"></span>Axios &amp; Fetch API</div>
+            <div class="pill"><span class="pill-gem"></span>Responsive Design</div>
           </div>
         </div>
         <div class="spanel" id="tab-backend">
           <div class="spanel-title">Backend &amp; API Development</div>
-          <div class="spanel-desc">Building robust, secure, and scalable server-side systems. RESTful APIs, authentication, and multi-role business logic with Django, Flask, and more.</div>
+          <div class="spanel-desc">Building robust, secure, and scalable server-side systems. RESTful APIs, authentication, and multi-role business logic with Django, Flask, and Express.</div>
           <div class="pills">
             <div class="pill"><span class="pill-gem"></span>Python 3.x</div>
             <div class="pill"><span class="pill-gem"></span>Django &amp; Django REST Framework</div>
             <div class="pill"><span class="pill-gem"></span>Flask &amp; Flask-RESTful</div>
+            <div class="pill"><span class="pill-gem"></span>Node.js / Express / TypeORM</div>
             <div class="pill"><span class="pill-gem"></span>RESTful API Design</div>
-            <div class="pill"><span class="pill-gem"></span>JWT Authentication</div>
+            <div class="pill"><span class="pill-gem"></span>JWT &amp; Session Auth</div>
             <div class="pill"><span class="pill-gem"></span>OAuth2 &amp; Social Auth</div>
             <div class="pill"><span class="pill-gem"></span>Celery &amp; Task Queues</div>
             <div class="pill"><span class="pill-gem"></span>WebSockets</div>
             <div class="pill"><span class="pill-gem"></span>API Security &amp; Rate Limiting</div>
+          </div>
+        </div>
+        <div class="spanel" id="tab-go">
+          <div class="spanel-title">Go &amp; Elixir — Systems &amp; Real-Time</div>
+          <div class="spanel-desc">High-performance backend systems, CLI tools, and real-time applications. Go for speed and concurrency; Elixir/Phoenix for fault-tolerant, massively concurrent real-time systems.</div>
+          <div class="pills">
+            <div class="pill"><span class="pill-gem"></span>Go (Golang)</div>
+            <div class="pill"><span class="pill-gem"></span>Gin Web Framework</div>
+            <div class="pill"><span class="pill-gem"></span>GORM (Go ORM)</div>
+            <div class="pill"><span class="pill-gem"></span>Cobra CLI Library</div>
+            <div class="pill"><span class="pill-gem"></span>Go Concurrency (goroutines)</div>
+            <div class="pill"><span class="pill-gem"></span>Elixir</div>
+            <div class="pill"><span class="pill-gem"></span>Phoenix Framework</div>
+            <div class="pill"><span class="pill-gem"></span>Phoenix LiveView</div>
+            <div class="pill"><span class="pill-gem"></span>Phoenix Channels (WebSockets)</div>
+            <div class="pill"><span class="pill-gem"></span>Ecto (Database ORM)</div>
           </div>
         </div>
         <div class="spanel" id="tab-csharp">
@@ -619,24 +502,21 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
             <div class="pill"><span class="pill-gem"></span>ASP.NET Core Web API</div>
             <div class="pill"><span class="pill-gem"></span>Entity Framework Core</div>
             <div class="pill"><span class="pill-gem"></span>LINQ &amp; Async / Await</div>
-            <div class="pill"><span class="pill-gem"></span>MVC &amp; Razor Pages</div>
             <div class="pill"><span class="pill-gem"></span>SignalR (Real-time)</div>
             <div class="pill"><span class="pill-gem"></span>Dependency Injection</div>
             <div class="pill"><span class="pill-gem"></span>xUnit Testing</div>
             <div class="pill"><span class="pill-gem"></span>Azure SDK for .NET</div>
-            <div class="pill"><span class="pill-gem"></span>WPF / WinForms (Desktop)</div>
           </div>
         </div>
         <div class="spanel" id="tab-mobile">
           <div class="spanel-title">Mobile App Development</div>
-          <div class="spanel-desc">Cross-platform and native mobile applications. Full-featured apps with offline support, push notifications, and native integrations.</div>
+          <div class="spanel-desc">Cross-platform and native mobile apps with offline support, push notifications, and native integrations.</div>
           <div class="pills">
             <div class="pill"><span class="pill-gem"></span>React Native</div>
             <div class="pill"><span class="pill-gem"></span>Expo Framework</div>
             <div class="pill"><span class="pill-gem"></span>Kotlin (Android Native)</div>
             <div class="pill"><span class="pill-gem"></span>Android SDK</div>
             <div class="pill"><span class="pill-gem"></span>Firebase (Auth, FCM, Firestore)</div>
-            <div class="pill"><span class="pill-gem"></span>AsyncStorage &amp; SQLite</div>
             <div class="pill"><span class="pill-gem"></span>Push Notifications</div>
             <div class="pill"><span class="pill-gem"></span>GPS &amp; Geolocation</div>
             <div class="pill"><span class="pill-gem"></span>Camera &amp; Media APIs</div>
@@ -645,12 +525,11 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
         </div>
         <div class="spanel" id="tab-cloud">
           <div class="spanel-title">Cloud &amp; DevOps</div>
-          <div class="spanel-desc">Deploying and managing production infrastructure on Microsoft Azure. Containerize with Docker, automate CI/CD, monitor and keep systems resilient.</div>
+          <div class="spanel-desc">Deploying and managing production infrastructure on Azure. Containerize, automate CI/CD, and keep systems resilient.</div>
           <div class="pills">
             <div class="pill"><span class="pill-gem"></span>Microsoft Azure</div>
-            <div class="pill"><span class="pill-gem"></span>Azure App Service</div>
+            <div class="pill"><span class="pill-gem"></span>Azure App Service &amp; Functions</div>
             <div class="pill"><span class="pill-gem"></span>Azure Blob Storage</div>
-            <div class="pill"><span class="pill-gem"></span>Azure Functions</div>
             <div class="pill"><span class="pill-gem"></span>Docker &amp; Containerization</div>
             <div class="pill"><span class="pill-gem"></span>GitHub Actions (CI/CD)</div>
             <div class="pill"><span class="pill-gem"></span>Linux / Ubuntu Server</div>
@@ -660,15 +539,14 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
         </div>
         <div class="spanel" id="tab-databases">
           <div class="spanel-title">Databases &amp; SQL</div>
-          <div class="spanel-desc">Efficient, normalized database schemas for transactional and analytical workloads. Comfortable with open-source and enterprise-grade relational databases.</div>
+          <div class="spanel-desc">Efficient, normalized database schemas for transactional and analytical workloads. Relational and document databases.</div>
           <div class="pills">
             <div class="pill"><span class="pill-gem"></span>PostgreSQL</div>
             <div class="pill"><span class="pill-gem"></span>Microsoft SQL Server</div>
-            <div class="pill"><span class="pill-gem"></span>SQLite</div>
-            <div class="pill"><span class="pill-gem"></span>MySQL</div>
+            <div class="pill"><span class="pill-gem"></span>SQLite / MySQL</div>
             <div class="pill"><span class="pill-gem"></span>SQL (Joins, CTEs, Window Fns)</div>
-            <div class="pill"><span class="pill-gem"></span>Django ORM / EF Core</div>
-            <div class="pill"><span class="pill-gem"></span>SQLAlchemy</div>
+            <div class="pill"><span class="pill-gem"></span>TypeORM / Django ORM / EF Core / Ecto</div>
+            <div class="pill"><span class="pill-gem"></span>GORM (Go)</div>
             <div class="pill"><span class="pill-gem"></span>Database Migrations</div>
             <div class="pill"><span class="pill-gem"></span>Query Optimization</div>
             <div class="pill"><span class="pill-gem"></span>Azure SQL Database</div>
@@ -676,7 +554,7 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
         </div>
         <div class="spanel" id="tab-ai">
           <div class="spanel-title">AI Integrations &amp; Automation</div>
-          <div class="spanel-desc">Embedding AI into real products — not demos. RAG pipelines to task automation scripts, LLM integrations, and intelligent workflows that save time.</div>
+          <div class="spanel-desc">Embedding AI into real products — RAG pipelines, LLM integrations, and intelligent workflows that save time and unlock new capabilities.</div>
           <div class="pills">
             <div class="pill"><span class="pill-gem"></span>OpenAI API (GPT-4o)</div>
             <div class="pill"><span class="pill-gem"></span>Anthropic Claude API</div>
@@ -686,23 +564,21 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
             <div class="pill"><span class="pill-gem"></span>Prompt Engineering</div>
             <div class="pill"><span class="pill-gem"></span>Python Automation Scripts</div>
             <div class="pill"><span class="pill-gem"></span>Web Scraping (BeautifulSoup / Playwright)</div>
-            <div class="pill"><span class="pill-gem"></span>Email &amp; Notification Automation</div>
             <div class="pill"><span class="pill-gem"></span>Azure AI Services</div>
           </div>
         </div>
         <div class="spanel" id="tab-payments">
           <div class="spanel-title">Payments, Integrations &amp; Tools</div>
-          <div class="spanel-desc">Wiring up the services that make a product real — payments, comms, version control, and the toolchain that keeps development smooth and professional.</div>
+          <div class="spanel-desc">Wiring up the services that make a product real — payments, comms, version control, and the toolchain that keeps development smooth.</div>
           <div class="pills">
             <div class="pill"><span class="pill-gem"></span>Stripe (Payments &amp; Subscriptions)</div>
             <div class="pill"><span class="pill-gem"></span>PayPal API</div>
             <div class="pill"><span class="pill-gem"></span>M-Pesa (Daraja API)</div>
             <div class="pill"><span class="pill-gem"></span>Twilio (SMS &amp; Voice)</div>
-            <div class="pill"><span class="pill-gem"></span>SendGrid &amp; Email APIs</div>
+            <div class="pill"><span class="pill-gem"></span>SendGrid / Brevo Email APIs</div>
             <div class="pill"><span class="pill-gem"></span>Git &amp; GitHub</div>
             <div class="pill"><span class="pill-gem"></span>Postman &amp; API Testing</div>
-            <div class="pill"><span class="pill-gem"></span>VS Code / Visual Studio</div>
-            <div class="pill"><span class="pill-gem"></span>Jira &amp; Agile Workflow</div>
+            <div class="pill"><span class="pill-gem"></span>jsPDF &amp; Report Generation</div>
           </div>
         </div>
       </div>
@@ -710,32 +586,28 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
   </div>
 </div>
 
-<!-- ================================================================
-     SERVICES
-     ================================================================ -->
+<!-- SERVICES -->
 <div class="section-full" id="services" style="background:var(--bg);">
   <div class="section-inner">
     <div class="eyebrow reveal">03. Services</div>
     <h2 class="section-h reveal">What I build<br/><em>for you.</em></h2>
     <div class="svc-grid reveal">
-      <div class="svc"><div class="svc-num">01</div><div class="svc-ico">🌐</div><h3>Full-Stack Web Applications</h3><p>End-to-end web platforms with React frontends and Django/Flask/C# backends. Multi-role access control, real-time features, and clean API design from the ground up.</p><div class="svc-chips"><span class="svc-chip">React</span><span class="svc-chip">Django</span><span class="svc-chip">PostgreSQL</span></div></div>
-      <div class="svc"><div class="svc-num">02</div><div class="svc-ico">🔷</div><h3>C# &amp; .NET Systems</h3><p>Enterprise-grade APIs, desktop applications, and real-time backend services with ASP.NET Core, Entity Framework, and SignalR. Battle-tested and production-ready.</p><div class="svc-chips"><span class="svc-chip">C#</span><span class="svc-chip">ASP.NET Core</span><span class="svc-chip">EF Core</span></div></div>
-      <div class="svc"><div class="svc-num">03</div><div class="svc-ico">📱</div><h3>Mobile App Development</h3><p>Cross-platform mobile apps with React Native and native Android with Kotlin. Rich UX, offline support, push notifications, and Play Store deployment.</p><div class="svc-chips"><span class="svc-chip">React Native</span><span class="svc-chip">Kotlin</span><span class="svc-chip">Firebase</span></div></div>
-      <div class="svc"><div class="svc-num">04</div><div class="svc-ico">☁️</div><h3>Cloud &amp; Azure Deployment</h3><p>Deploy, scale, and manage your application on Microsoft Azure. App Service, Blob Storage, Azure SQL, Functions, and CI/CD pipelines via GitHub Actions.</p><div class="svc-chips"><span class="svc-chip">Azure</span><span class="svc-chip">Docker</span><span class="svc-chip">CI/CD</span></div></div>
-      <div class="svc"><div class="svc-num">05</div><div class="svc-ico">🤖</div><h3>AI-Powered Systems</h3><p>Integrate GPT-4o, Claude, or custom AI pipelines into your product. RAG systems, chatbots, document analysis, and intelligent workflow automation.</p><div class="svc-chips"><span class="svc-chip">OpenAI</span><span class="svc-chip">Claude API</span><span class="svc-chip">LangChain</span></div></div>
-      <div class="svc"><div class="svc-num">06</div><div class="svc-ico">🗄️</div><h3>Database Design &amp; SQL</h3><p>Normalized schema design, complex queries, migrations, and performance optimization. PostgreSQL, SQL Server, and Azure SQL for transactional and analytical workloads.</p><div class="svc-chips"><span class="svc-chip">PostgreSQL</span><span class="svc-chip">SQL Server</span><span class="svc-chip">Azure SQL</span></div></div>
-      <div class="svc"><div class="svc-num">07</div><div class="svc-ico">⚙️</div><h3>Automation &amp; Scripting</h3><p>Python scripts and scheduled jobs that eliminate manual work — report generation, data sync, scraping pipelines, email automation, and more.</p><div class="svc-chips"><span class="svc-chip">Python</span><span class="svc-chip">Celery</span><span class="svc-chip">Playwright</span></div></div>
+      <div class="svc"><div class="svc-num">01</div><div class="svc-ico">🌐</div><h3>Full-Stack Web Applications</h3><p>End-to-end web platforms with React/Next.js/Vue frontends and Django/Flask/Go/Elixir backends. Multi-role access control, real-time features, and clean API design.</p><div class="svc-chips"><span class="svc-chip">React</span><span class="svc-chip">Next.js</span><span class="svc-chip">Django</span><span class="svc-chip">Go</span></div></div>
+      <div class="svc"><div class="svc-num">02</div><div class="svc-ico">🐹</div><h3>Go &amp; Elixir Systems</h3><p>High-performance APIs with Go/Gin, CLI tools with Cobra, and real-time web apps with Elixir/Phoenix LiveView and Channels. Concurrent, fault-tolerant, production-ready.</p><div class="svc-chips"><span class="svc-chip">Go/Gin</span><span class="svc-chip">Elixir</span><span class="svc-chip">Phoenix</span></div></div>
+      <div class="svc"><div class="svc-num">03</div><div class="svc-ico">🔷</div><h3>C# &amp; .NET Systems</h3><p>Enterprise-grade APIs, desktop applications, and real-time backend services with ASP.NET Core, Entity Framework, and SignalR.</p><div class="svc-chips"><span class="svc-chip">C#</span><span class="svc-chip">ASP.NET Core</span><span class="svc-chip">EF Core</span></div></div>
+      <div class="svc"><div class="svc-num">04</div><div class="svc-ico">📱</div><h3>Mobile App Development</h3><p>Cross-platform mobile apps with React Native and native Android with Kotlin. Offline support, push notifications, GPS, and Play Store deployment.</p><div class="svc-chips"><span class="svc-chip">React Native</span><span class="svc-chip">Kotlin</span><span class="svc-chip">Firebase</span></div></div>
+      <div class="svc"><div class="svc-num">05</div><div class="svc-ico">☁️</div><h3>Cloud &amp; Azure Deployment</h3><p>Deploy and manage your application on Microsoft Azure. App Service, Blob Storage, Azure SQL, Functions, and CI/CD pipelines via GitHub Actions.</p><div class="svc-chips"><span class="svc-chip">Azure</span><span class="svc-chip">Docker</span><span class="svc-chip">CI/CD</span></div></div>
+      <div class="svc"><div class="svc-num">06</div><div class="svc-ico">🤖</div><h3>AI-Powered Systems</h3><p>Integrate GPT-4o, Claude, or custom AI pipelines into your product. RAG systems, chatbots, document analysis, and intelligent workflow automation.</p><div class="svc-chips"><span class="svc-chip">OpenAI</span><span class="svc-chip">Claude API</span><span class="svc-chip">LangChain</span></div></div>
+      <div class="svc"><div class="svc-num">07</div><div class="svc-ico">💬</div><h3>Real-Time Applications</h3><p>Live chat, collaborative tools, and real-time dashboards using Phoenix Channels, WebSockets, and SignalR. Presence tracking, instant updates, no page refresh.</p><div class="svc-chips"><span class="svc-chip">Phoenix</span><span class="svc-chip">WebSockets</span><span class="svc-chip">LiveView</span></div></div>
       <div class="svc"><div class="svc-num">08</div><div class="svc-ico">💳</div><h3>Payment Integrations</h3><p>Stripe subscriptions, M-Pesa Daraja, and PayPal — fully integrated payment flows, webhooks, invoicing, and subscription management for any platform.</p><div class="svc-chips"><span class="svc-chip">Stripe</span><span class="svc-chip">M-Pesa</span><span class="svc-chip">PayPal</span></div></div>
-      <div class="svc"><div class="svc-num">09</div><div class="svc-ico">📊</div><h3>Data Science &amp; Analytics</h3><p>Data analysis pipelines, machine learning models, dashboards, and BI integrations — transforming raw data into operational insights and automated decisions.</p><div class="svc-chips"><span class="svc-chip">Python</span><span class="svc-chip">Pandas</span><span class="svc-chip">Scikit-Learn</span></div></div>
+      <div class="svc"><div class="svc-num">09</div><div class="svc-ico">📊</div><h3>Data Science &amp; Analytics</h3><p>Data pipelines, ML models, dashboards, and BI integrations — transforming raw data into operational insights and automated decisions.</p><div class="svc-chips"><span class="svc-chip">Python</span><span class="svc-chip">Pandas</span><span class="svc-chip">Scikit-Learn</span></div></div>
     </div>
   </div>
 </div>
 
-<!-- ================================================================
-     PROJECTS
-     ================================================================ -->
+<!-- PROJECTS -->
 <section class="section" id="projects">
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
     <div>
       <div class="eyebrow reveal">04. Projects</div>
       <h2 class="section-h reveal">Featured <em>Work.</em></h2>
@@ -743,210 +615,266 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
     <a href="https://github.com/simono02" class="btn-outline reveal" target="_blank" rel="noopener">GitHub →</a>
   </div>
 
-  <div class="proj-grid">
+  <div class="proj-filter reveal">
+    <button class="filter-btn active" data-filter="all">All (14)</button>
+    <button class="filter-btn" data-filter="web">Web Apps</button>
+    <button class="filter-btn" data-filter="realtime">Real-Time</button>
+    <button class="filter-btn" data-filter="go">Go / CLI</button>
+    <button class="filter-btn" data-filter="ai">AI / ML</button>
+    <button class="filter-btn" data-filter="mobile">Mobile</button>
+  </div>
 
-    <!-- FEATURED — Writers Platform -->
-    <div class="proj featured reveal">
+  <div class="proj-grid" id="projGrid">
+
+    <!-- 01 FEATURED: Academic Writers -->
+    <div class="proj featured reveal" data-cats="web">
       <div class="proj-body">
         <div class="feat-badge">⭐ Featured Project</div>
-        <div class="proj-top">
-          <span class="proj-idx">01</span>
-          <div class="proj-links"><div class="proj-link">↗</div></div>
-        </div>
+        <div class="proj-top"><span class="proj-idx">01</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
         <h3>Academic Writers Platform</h3>
-        <p>An end-to-end SaaS platform that manages the full lifecycle of academic assignment fulfillment — from client order submission through writer assignment, delivery, revision, payment allocation, and automated invoicing. The system enforces role-based access for students, writers, and administrators, with a performance analytics dashboard that tracks writer ratings, completion rates, and revenue flows. Deployed on Azure with a PostgreSQL backend.</p>
-        <div class="proj-tags">
-          <span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span>
-          <span class="ptag">Azure</span><span class="ptag">Stripe</span><span class="ptag">JWT Auth</span>
-        </div>
+        <p>An end-to-end SaaS platform managing the full lifecycle of academic assignment fulfillment — from client order submission through writer assignment, delivery, revision, payment allocation, and automated invoicing. Enforces role-based access for students, writers, and administrators, with a performance analytics dashboard tracking writer ratings, completion rates, and revenue flows. Deployed on Azure with PostgreSQL.</p>
+        <div class="proj-tags"><span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span><span class="ptag">Azure</span><span class="ptag">Stripe</span><span class="ptag">JWT Auth</span></div>
       </div>
-      <!-- Screenshot: client orders dashboard -->
-      <div class="proj-visual" data-src="screenshots/client orders dashboard.PNG" data-caption="Client Orders Dashboard">
-        <img src="screenshots/client orders dashboard.PNG" alt="Academic Writers Platform — Client Orders Dashboard" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
-        <div class="screen-overlay">
-          <span class="screen-badge">🖼 Client Orders Dashboard</span>
+      <div class="proj-visual-stack">
+        <div class="proj-visual" data-src="screenshots/client orders dashboard.PNG" data-caption="Client Orders Dashboard">
+          <img src="screenshots/client orders dashboard.PNG" alt="Client Orders Dashboard" onerror="this.parentElement.style.display='none'"/>
+          <div class="screen-overlay"><span class="screen-badge">🖼 Client Orders Dashboard</span></div>
+        </div>
+        <div class="vstack-row">
+          <div class="proj-visual" data-src="screenshots/clientspayments.PNG" data-caption="Client Payments">
+            <img src="screenshots/clientspayments.PNG" alt="Client Payments" onerror="this.parentElement.style.display='none'"/>
+            <div class="screen-overlay"><span class="screen-badge">💳 Payments</span></div>
+          </div>
+          <div class="proj-visual" data-src="screenshots/rent billing.PNG" data-caption="Billing Module">
+            <img src="screenshots/rent billing.PNG" alt="Billing" onerror="this.parentElement.style.display='none'"/>
+            <div class="screen-overlay"><span class="screen-badge">📊 Billing</span></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Civet Investments -->
-    <div class="proj reveal">
+    <!-- 02 GRP — Grace Chapel -->
+    <div class="proj reveal" data-cats="web">
+      <div class="proj-top"><span class="proj-idx">02</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
+      <div class="proj-gallery" id="gallery-grp">
+        <div class="gal-thumb" data-src="screenshots/grp/grp-dashboard.png" data-caption="GRP Admin Dashboard">
+          <img src="screenshots/grp/grp-dashboard.png" alt="GRP Dashboard" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Dashboard</span></div>
+        </div>
+        <div class="gal-thumb" data-src="screenshots/grp/grp-contributions.png" data-caption="Contributions & Occasions">
+          <img src="screenshots/grp/grp-contributions.png" alt="GRP Contributions" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Contributions</span></div>
+        </div>
+        <div class="gal-thumb" data-src="screenshots/grp/grp-report.png" data-caption="PDF Member Statement">
+          <img src="screenshots/grp/grp-report.png" alt="GRP Report" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">PDF Reports</span></div>
+        </div>
+      </div>
+      <h3>GRP — Grace Chapel Contributions Portal</h3>
+      <p>A full-stack group resource portal for managing church member contributions across occasions. Features multi-role auth (admin / member), occasion management with optional fixed payable amounts, contribution recording with outstanding balance tracking, PDF report generation (member statements &amp; occasion reports matching official CWA formats), email invitations via Brevo, and a responsive admin dashboard with real-time stats.</p>
+      <div class="proj-tags"><span class="ptag">Next.js 14</span><span class="ptag">Express/TypeORM</span><span class="ptag">PostgreSQL</span><span class="ptag">Brevo</span><span class="ptag">jsPDF</span><span class="ptag">TypeScript</span></div>
+    </div>
+
+    <!-- 03 DevForum -->
+    <div class="proj reveal" data-cats="web realtime">
+      <div class="proj-top"><span class="proj-idx">03</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
+      <div class="proj-gallery" id="gallery-devforum">
+        <div class="gal-thumb" data-src="screenshots/devforum/devforum-feed.png" data-caption="DevForum — Post Feed">
+          <img src="screenshots/devforum/devforum-feed.png" alt="DevForum Feed" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Post Feed</span></div>
+        </div>
+        <div class="gal-thumb" data-src="screenshots/devforum/devforum-post.png" data-caption="DevForum — Post &amp; Comments">
+          <img src="screenshots/devforum/devforum-post.png" alt="DevForum Post" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Post Detail</span></div>
+        </div>
+        <div class="gal-thumb" data-src="screenshots/devforum/devforum-admin.png" data-caption="DevForum — Admin Panel">
+          <img src="screenshots/devforum/devforum-admin.png" alt="DevForum Admin" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Admin Panel</span></div>
+        </div>
+      </div>
+      <h3>DevForum — Developer Discussion Platform</h3>
+      <p>A full-stack developer discussion forum where users register, write posts, comment, and upvote content. Features a member dashboard, post management, and a full admin panel for moderating users and content. Built with Go/Gin for the HTTP API and GORM for PostgreSQL interactions; the frontend is a Vue 3 SPA using Pinia for state management and Axios for API communication.</p>
+      <div class="proj-tags"><span class="ptag">Go</span><span class="ptag">Gin</span><span class="ptag">GORM</span><span class="ptag">Vue 3</span><span class="ptag">Pinia</span><span class="ptag">PostgreSQL</span></div>
+    </div>
+
+    <!-- 04 HubChat -->
+    <div class="proj reveal" data-cats="web realtime">
+      <div class="proj-top"><span class="proj-idx">04</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
+      <div class="proj-gallery" id="gallery-hubchat">
+        <div class="gal-thumb" data-src="screenshots/hubchat/hubchat-rooms.png" data-caption="HubChat — Chat Rooms">
+          <img src="screenshots/hubchat/hubchat-rooms.png" alt="HubChat Rooms" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Chat Rooms</span></div>
+        </div>
+        <div class="gal-thumb" data-src="screenshots/hubchat/hubchat-live.png" data-caption="HubChat — Live Messaging">
+          <img src="screenshots/hubchat/hubchat-live.png" alt="HubChat Live" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Live Chat</span></div>
+        </div>
+        <div class="gal-thumb" data-src="screenshots/hubchat/hubchat-admin.png" data-caption="HubChat — Admin Dashboard">
+          <img src="screenshots/hubchat/hubchat-admin.png" alt="HubChat Admin" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Admin</span></div>
+        </div>
+      </div>
+      <h3>HubChat — Real-Time Group Chat Application</h3>
+      <p>A real-time group chat application where users sign up, create chat rooms, and send messages that appear instantly for all participants without any page refresh. Includes member &amp; admin dashboards, room management, message moderation, and live presence tracking. Built entirely with Elixir/Phoenix — UI powered by Phoenix LiveView; real-time messaging via Phoenix Channels over WebSockets.</p>
+      <div class="proj-tags"><span class="ptag">Elixir</span><span class="ptag">Phoenix</span><span class="ptag">LiveView</span><span class="ptag">Channels</span><span class="ptag">Ecto</span><span class="ptag">PostgreSQL</span></div>
+    </div>
+
+    <!-- 05 ExpenseSplitter (CLI — no frontend) -->
+    <div class="proj reveal" data-cats="go">
+      <div class="proj-top"><span class="proj-idx">05</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
+      <div class="no-screenshot">
+        <div>
+          <div style="font-size:2rem;margin-bottom:0.8rem;">⌨️</div>
+          <div>CLI Tool — No Frontend</div>
+          <div style="margin-top:0.4rem;font-size:0.62rem;opacity:0.6;">Pure terminal interaction · JSON local storage</div>
+        </div>
+      </div>
+      <div class="proj-cli">COMMAND-LINE TOOL</div>
+      <h3>ExpenseSplitter — Go CLI Expense Splitting Tool</h3>
+      <p>A command-line tool that helps groups split shared expenses fairly. Users add expenses from the terminal, specifying who paid and who was involved, and the tool calculates exactly who owes who and how much — with the minimum number of transactions needed to settle everything. Built entirely in Go using the Cobra library. No server, no database, no frontend — all data stored locally in JSON, all interaction through the terminal.</p>
+      <div class="proj-tags"><span class="ptag">Go</span><span class="ptag">Cobra CLI</span><span class="ptag">JSON Storage</span><span class="ptag">Algorithms</span></div>
+    </div>
+
+    <!-- 06 Civet Investments -->
+    <div class="proj reveal" data-cats="web">
       <div class="proj-top">
-        <span class="proj-idx">02</span>
+        <span class="proj-idx">06</span>
         <div class="proj-links">
-          <a class="proj-link" href="https://civetinvestmets.co.ke/" target="_blank" rel="noopener" title="Live Site">🌐</a>
+          <a class="proj-link" href="https://civetinvestmets.co.ke/" target="_blank" rel="noopener">🌐</a>
           <div class="proj-link">↗</div>
         </div>
       </div>
-      <div class="proj-screenshot" data-src="screenshots/rent billing.PNG" data-caption="Rent Billing — Civet Investments">
-        <img src="screenshots/rent billing.PNG" alt="Civet Investments — Rent Billing Dashboard" onerror="this.parentElement.style.display='none'"/>
-        <div class="screen-overlay"><span class="screen-badge">🖼 Automated Rent Billing</span></div>
+      <div class="proj-gallery">
+        <div class="gal-thumb" data-src="screenshots/rent billing.PNG" data-caption="Automated Rent Billing">
+          <img src="screenshots/rent billing.PNG" alt="Rent Billing" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Rent Billing</span></div>
+        </div>
+        <div class="gal-thumb" data-src="screenshots/rentalagencydashboard.PNG" data-caption="Agency Dashboard">
+          <img src="screenshots/rentalagencydashboard.PNG" alt="Agency Dashboard" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Agency Dashboard</span></div>
+        </div>
       </div>
       <div class="proj-live">LIVE IN PRODUCTION</div>
-      <h3>Civet Investments — Rental Property Management Platform</h3>
-      <p>A full-stack property management platform that centralises tenant lifecycle management, automated rent billing, M-Pesa payment reconciliation, and maintenance workflow tracking within a single landlord-agent portal. The billing engine runs on a scheduled pipeline that generates statements, sends M-Pesa payment prompts via Daraja API, and updates ledgers automatically — eliminating manual rent collection entirely.</p>
-      <div class="proj-tags">
-        <span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span>
-        <span class="ptag">M-Pesa</span><span class="ptag">Azure</span><span class="ptag">Twilio</span>
-      </div>
+      <h3>Civet Investments — Rental Property Management</h3>
+      <p>Full-stack property management platform centralising tenant lifecycle management, automated rent billing, M-Pesa payment reconciliation, and maintenance workflow tracking. The billing engine runs on a scheduled pipeline that generates statements, sends M-Pesa payment prompts via Daraja API, and updates ledgers automatically.</p>
+      <div class="proj-tags"><span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span><span class="ptag">M-Pesa</span><span class="ptag">Azure</span><span class="ptag">Twilio</span></div>
     </div>
 
-    <!-- ResearchPro -->
-    <div class="proj reveal d1">
+    <!-- 07 ResearchPro -->
+    <div class="proj reveal" data-cats="web">
       <div class="proj-top">
-        <span class="proj-idx">03</span>
+        <span class="proj-idx">07</span>
         <div class="proj-links">
-          <a class="proj-link" href="https://researchpro.co.ke/" target="_blank" rel="noopener" title="Live Site">🌐</a>
+          <a class="proj-link" href="https://researchpro.co.ke/" target="_blank" rel="noopener">🌐</a>
           <div class="proj-link">↗</div>
         </div>
       </div>
-      <div class="proj-screenshot" data-src="screenshots/clientspayments.PNG" data-caption="Client Payments — ResearchPro">
-        <img src="screenshots/clientspayments.PNG" alt="ResearchPro — Client Payments" onerror="this.parentElement.style.display='none'"/>
-        <div class="screen-overlay"><span class="screen-badge">🖼 Client Payments Module</span></div>
+      <div class="proj-gallery">
+        <div class="gal-thumb" data-src="screenshots/clientspayments.PNG" data-caption="Client Payments Module">
+          <img src="screenshots/clientspayments.PNG" alt="Client Payments" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Payments</span></div>
+        </div>
       </div>
       <div class="proj-live">LIVE IN PRODUCTION</div>
       <h3>ResearchPro — Academic Research Services Platform</h3>
-      <p>A dedicated platform that orchestrates the full research services workflow — from project brief submission and researcher matching through milestone tracking, secure file exchange, payment processing, and a structured review-and-revision cycle. The payment module supports Stripe and M-Pesa with webhook-driven status updates, keeping clients and researchers in sync at every stage.</p>
-      <div class="proj-tags">
-        <span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span>
-        <span class="ptag">Stripe</span><span class="ptag">Azure</span><span class="ptag">SendGrid</span>
-      </div>
+      <p>Dedicated platform orchestrating the full research services workflow — from project brief submission and researcher matching through milestone tracking, secure file exchange, payment processing, and a structured review-and-revision cycle. Supports Stripe and M-Pesa with webhook-driven status updates.</p>
+      <div class="proj-tags"><span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span><span class="ptag">Stripe</span><span class="ptag">Azure</span></div>
     </div>
 
-    <!-- Rental Agency Dashboard -->
-    <div class="proj reveal">
-      <div class="proj-top">
-        <span class="proj-idx">04</span>
-        <div class="proj-links"><div class="proj-link">↗</div></div>
-      </div>
-      <div class="proj-screenshot" data-src="screenshots/rentalagencydashboard.PNG" data-caption="Rental Agency Dashboard">
-        <img src="screenshots/rentalagencydashboard.PNG" alt="Rental Agency Operations Dashboard" onerror="this.parentElement.style.display='none'"/>
-        <div class="screen-overlay"><span class="screen-badge">🖼 Agency Operations Dashboard</span></div>
-      </div>
-      <h3>Rental Agency Operations Dashboard</h3>
-      <p>A multi-property operations dashboard that gives agency managers a real-time view of portfolio performance — occupancy rates, rent collection status, maintenance request queues, and agent activity summaries. Built as an administrative layer on top of the Civet property management platform, enabling branch-level reporting and cross-property financial analysis.</p>
-      <div class="proj-tags">
-        <span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span>
-        <span class="ptag">M-Pesa</span><span class="ptag">Azure</span>
-      </div>
-    </div>
-
-    <!-- Rabit Farm -->
-    <div class="proj reveal">
-      <div class="proj-top">
-        <span class="proj-idx">05</span>
-        <div class="proj-links"><div class="proj-link">↗</div></div>
-      </div>
-      <div class="proj-screenshot" data-src="screenshots/decisions outcomes.PNG" data-caption="Farm Decision Outcomes — Rabit">
-        <img src="screenshots/decisions outcomes.PNG" alt="Rabit Farm — Decision Outcomes Dashboard" onerror="this.parentElement.style.display='none'"/>
-        <div class="screen-overlay"><span class="screen-badge">🖼 Farm Decision Outcomes</span></div>
+    <!-- 08 Rabit Farm -->
+    <div class="proj reveal" data-cats="ai web">
+      <div class="proj-top"><span class="proj-idx">08</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
+      <div class="proj-gallery">
+        <div class="gal-thumb" data-src="screenshots/decisions outcomes.PNG" data-caption="Farm Decision Outcomes">
+          <img src="screenshots/decisions outcomes.PNG" alt="Farm Decisions" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Decision Intelligence</span></div>
+        </div>
       </div>
       <h3>Rabit — Farm Decision Intelligence System</h3>
-      <p>A data science-driven agricultural platform that transforms daily farm operations data into actionable intelligence. The system ingests crop monitoring readings, livestock health records, and weather signals to power predictive yield models and surface prioritised decision recommendations through an operations dashboard — helping farm managers act on insight rather than intuition.</p>
-      <div class="proj-tags">
-        <span class="ptag">Python</span><span class="ptag">Flask</span><span class="ptag">Pandas</span>
-        <span class="ptag">Scikit-Learn</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span>
-      </div>
+      <p>Data science-driven agricultural platform transforming daily farm operations data into actionable intelligence. Ingests crop monitoring readings, livestock health records, and weather signals to power predictive yield models and surface prioritised decision recommendations through an operations dashboard.</p>
+      <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Flask</span><span class="ptag">Pandas</span><span class="ptag">Scikit-Learn</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span></div>
     </div>
 
-    <!-- WaterBill — NO screenshot -->
-    <div class="proj reveal d1">
-      <div class="proj-top">
-        <span class="proj-idx">06</span>
-        <div class="proj-links"><div class="proj-link">↗</div></div>
-      </div>
-      <h3>WaterBill — Utility Billing Automation System</h3>
-      <p>An automated billing platform for water utility providers that replaces manual meter-reading and statement workflows with a fully digital pipeline. The system manages tenant accounts, processes field-officer meter readings via a companion mobile interface, applies a tiered pricing engine, dispatches bulk SMS notifications via Twilio, and reconciles M-Pesa payments — reducing billing cycle time from days to minutes.</p>
-      <div class="proj-tags">
-        <span class="ptag">Flask</span><span class="ptag">PostgreSQL</span><span class="ptag">M-Pesa API</span>
-        <span class="ptag">Twilio</span><span class="ptag">Python</span><span class="ptag">React Native</span>
-      </div>
+    <!-- 09 WaterBill -->
+    <div class="proj reveal" data-cats="web mobile">
+      <div class="proj-top"><span class="proj-idx">09</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
+      <h3>WaterBill — Utility Billing Automation</h3>
+      <p>Automated billing platform for water utility providers replacing manual meter-reading workflows. Manages tenant accounts, processes field-officer meter readings via a companion mobile interface, applies a tiered pricing engine, dispatches bulk SMS via Twilio, and reconciles M-Pesa payments — reducing billing cycle time from days to minutes.</p>
+      <div class="proj-tags"><span class="ptag">Flask</span><span class="ptag">PostgreSQL</span><span class="ptag">M-Pesa</span><span class="ptag">Twilio</span><span class="ptag">React Native</span></div>
     </div>
 
-    <!-- Hospital Management -->
-    <div class="proj reveal">
-      <div class="proj-top">
-        <span class="proj-idx">07</span>
-        <div class="proj-links"><div class="proj-link">↗</div></div>
-      </div>
+    <!-- 10 Hospital -->
+    <div class="proj reveal" data-cats="web">
+      <div class="proj-top"><span class="proj-idx">10</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
       <h3>Hospital Management System</h3>
-      <p>A multi-department healthcare operations platform covering patient record management, appointment scheduling, clinical billing, laboratory result routing, and pharmacy inventory — all consolidated under role-based staff portals. The system generates PDF clinical reports and financial statements on demand, with a Celery-powered notification layer that keeps patients and clinical staff informed at each care stage.</p>
-      <div class="proj-tags">
-        <span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">SQL Server</span>
-        <span class="ptag">Azure</span><span class="ptag">Celery</span><span class="ptag">C#</span>
-      </div>
+      <p>Multi-department healthcare operations platform covering patient records, appointment scheduling, clinical billing, laboratory result routing, and pharmacy inventory — all under role-based staff portals. Generates PDF clinical reports and financial statements with a Celery-powered notification layer.</p>
+      <div class="proj-tags"><span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">SQL Server</span><span class="ptag">Azure</span><span class="ptag">Celery</span><span class="ptag">C#</span></div>
     </div>
 
-    <!-- Mobile Security -->
-    <div class="proj reveal d1">
-      <div class="proj-top">
-        <span class="proj-idx">08</span>
-        <div class="proj-links"><div class="proj-link">↗</div></div>
-      </div>
+    <!-- 11 Mobile Security -->
+    <div class="proj reveal" data-cats="ai web">
+      <div class="proj-top"><span class="proj-idx">11</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
       <h3>Mobile Security Monitoring Platform</h3>
-      <p>A real-time device telemetry platform that ingests event streams from monitored mobile endpoints, applies an OpenAI-powered anomaly detection layer, and surfaces geofencing violations and threat flags to an operator dashboard over WebSockets. The AI pipeline classifies behavioural deviations automatically, reducing manual review overhead and enabling faster incident response.</p>
-      <div class="proj-tags">
-        <span class="ptag">Python</span><span class="ptag">Flask</span><span class="ptag">OpenAI API</span>
-        <span class="ptag">React</span><span class="ptag">WebSockets</span><span class="ptag">Azure</span>
-      </div>
+      <p>Real-time device telemetry platform ingesting event streams from monitored mobile endpoints. An OpenAI-powered anomaly detection layer surfaces geofencing violations and threat flags to an operator dashboard over WebSockets. AI pipeline classifies behavioural deviations automatically, reducing manual review overhead.</p>
+      <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Flask</span><span class="ptag">OpenAI API</span><span class="ptag">React</span><span class="ptag">WebSockets</span><span class="ptag">Azure</span></div>
     </div>
 
-    <!-- AI Document Assistant -->
-    <div class="proj reveal">
-      <div class="proj-top">
-        <span class="proj-idx">09</span>
-        <div class="proj-links"><div class="proj-link">↗</div></div>
-      </div>
+    <!-- 12 AI Document Assistant -->
+    <div class="proj reveal" data-cats="ai web">
+      <div class="proj-top"><span class="proj-idx">12</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
       <h3>AI Document Assistant (RAG)</h3>
-      <p>An intelligent document retrieval platform that allows legal and HR teams to query large document repositories in natural language. Uploaded PDFs are chunked, embedded, and indexed into a vector store; a LangChain-orchestrated RAG pipeline routes queries to the Claude API and returns cited, context-grounded answers — dramatically cutting document review time for compliance-heavy workflows.</p>
-      <div class="proj-tags">
-        <span class="ptag">LangChain</span><span class="ptag">Claude API</span><span class="ptag">Flask</span>
-        <span class="ptag">Azure Blob</span><span class="ptag">PostgreSQL</span>
-      </div>
+      <p>Intelligent document retrieval platform allowing legal and HR teams to query large document repositories in natural language. Uploaded PDFs are chunked, embedded, and indexed into a vector store; a LangChain-orchestrated RAG pipeline routes queries to the Claude API and returns cited, context-grounded answers.</p>
+      <div class="proj-tags"><span class="ptag">LangChain</span><span class="ptag">Claude API</span><span class="ptag">Flask</span><span class="ptag">Azure Blob</span><span class="ptag">PostgreSQL</span></div>
     </div>
 
-    <!-- E-Commerce -->
-    <div class="proj reveal d1">
-      <div class="proj-top">
-        <span class="proj-idx">10</span>
-        <div class="proj-links"><div class="proj-link">↗</div></div>
+    <!-- 13 Rental Agency Dashboard -->
+    <div class="proj reveal" data-cats="web">
+      <div class="proj-top"><span class="proj-idx">13</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
+      <div class="proj-gallery">
+        <div class="gal-thumb" data-src="screenshots/rentalagencydashboard.PNG" data-caption="Agency Operations Dashboard">
+          <img src="screenshots/rentalagencydashboard.PNG" alt="Agency Dashboard" onerror="this.parentElement.style.background='var(--bg3)';this.style.display='none'"/>
+          <div class="gal-overlay"><span class="gal-label">Operations Dashboard</span></div>
+        </div>
       </div>
+      <h3>Rental Agency Operations Dashboard</h3>
+      <p>Multi-property operations dashboard giving agency managers real-time views of portfolio performance — occupancy rates, rent collection status, maintenance request queues, and agent activity summaries. Built as an administrative layer enabling branch-level reporting and cross-property financial analysis.</p>
+      <div class="proj-tags"><span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">PostgreSQL</span><span class="ptag">M-Pesa</span><span class="ptag">Azure</span></div>
+    </div>
+
+    <!-- 14 E-Commerce -->
+    <div class="proj reveal" data-cats="web">
+      <div class="proj-top"><span class="proj-idx">14</span><div class="proj-links"><div class="proj-link">↗</div></div></div>
       <h3>E-Commerce &amp; Subscription Platform</h3>
-      <p>A full-featured commerce platform that handles product catalogue management, shopping cart logic, Stripe subscription billing with proration, PayPal checkout fallback, and a seller analytics dashboard. The platform automates transactional communications via SendGrid and integrates a flexible coupon and discount engine to support promotional campaigns without manual intervention.</p>
-      <div class="proj-tags">
-        <span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">Stripe</span>
-        <span class="ptag">PayPal</span><span class="ptag">SendGrid</span><span class="ptag">PostgreSQL</span>
-      </div>
+      <p>Full-featured commerce platform handling product catalogue management, shopping cart logic, Stripe subscription billing with proration, PayPal checkout fallback, and a seller analytics dashboard. Automates transactional communications via SendGrid and integrates a flexible coupon and discount engine.</p>
+      <div class="proj-tags"><span class="ptag">Django</span><span class="ptag">React</span><span class="ptag">Stripe</span><span class="ptag">PayPal</span><span class="ptag">SendGrid</span><span class="ptag">PostgreSQL</span></div>
     </div>
 
   </div>
 </section>
 
-<!-- ================================================================
-     PROCESS
-     ================================================================ -->
+<!-- PROCESS -->
 <div class="section-full process-outer" id="process">
   <div class="section-inner" style="padding:8rem 2.5rem;">
     <div class="eyebrow reveal" style="justify-content:center;">05. How I Work</div>
     <h2 class="section-h reveal" style="text-align:center;">From idea to<br/><em>production.</em></h2>
     <div class="process-row reveal">
       <div class="pstep">
-        <div class="pnum" data-n="01">01</div>
+        <div class="pnum"><span class="pnum-inner">01</span></div>
         <h4>Discover</h4>
         <p>We define the problem, goals, users, and constraints. No assumptions — clear scope before any code is written.</p>
       </div>
       <div class="pstep">
-        <div class="pnum" data-n="02">02</div>
+        <div class="pnum"><span class="pnum-inner">02</span></div>
         <h4>Architect</h4>
         <p>System design, database schema, API contracts, and tech stack decisions — all documented and agreed upfront.</p>
       </div>
       <div class="pstep">
-        <div class="pnum" data-n="03">03</div>
+        <div class="pnum"><span class="pnum-inner">03</span></div>
         <h4>Build</h4>
         <p>Iterative development with weekly updates, staging environments, and transparent communication throughout.</p>
       </div>
       <div class="pstep">
-        <div class="pnum" data-n="04">04</div>
+        <div class="pnum"><span class="pnum-inner">04</span></div>
         <h4>Ship &amp; Support</h4>
         <p>Deployed to production, tested, documented, and handed over with full support. Long-term partnerships welcome.</p>
       </div>
@@ -954,9 +882,7 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
   </div>
 </div>
 
-<!-- ================================================================
-     CONTACT
-     ================================================================ -->
+<!-- CONTACT -->
 <section class="section" id="contact">
   <div class="eyebrow reveal">06. Contact</div>
   <h2 class="section-h reveal">Let's build<br/><em>something great.</em></h2>
@@ -964,35 +890,12 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
     <div class="reveal">
       <p class="contact-lede">I'm currently open to freelance projects, contract work, and full-time engineering roles. Whether you have a fully-scoped project or just an idea — reach out and let's talk.</p>
       <div class="clinks">
-        <a class="clink" href="mailto:kuriasimon002@gmail.com">
-          <div class="clink-ico">✉️</div>
-          <div class="clink-info"><div class="cn">Email</div><div class="cs">kuriasimon002@gmail.com</div></div>
-          <div class="clink-arr">→</div>
-        </a>
-        <a class="clink" href="https://linkedin.com/in/simon-kuria-38986334a" target="_blank" rel="noopener">
-          <div class="clink-ico">💼</div>
-          <div class="clink-info"><div class="cn">LinkedIn</div><div class="cs">simon-kuria-38986334a</div></div>
-          <div class="clink-arr">→</div>
-        </a>
-        <a class="clink" href="https://github.com/simono02" target="_blank" rel="noopener">
-          <div class="clink-ico">🐙</div>
-          <div class="clink-info"><div class="cn">GitHub</div><div class="cs">github.com/simono02</div></div>
-          <div class="clink-arr">→</div>
-        </a>
-        <a class="clink" href="https://civetinvestmets.co.ke/" target="_blank" rel="noopener">
-          <div class="clink-ico">🌐</div>
-          <div class="clink-info"><div class="cn">Civet Investments</div><div class="cs">civetinvestmets.co.ke — Live</div></div>
-          <div class="clink-arr">→</div>
-        </a>
-        <a class="clink" href="https://researchpro.co.ke/" target="_blank" rel="noopener">
-          <div class="clink-ico">🔬</div>
-          <div class="clink-info"><div class="cn">ResearchPro</div><div class="cs">researchpro.co.ke — Live</div></div>
-          <div class="clink-arr">→</div>
-        </a>
-        <div class="clink" style="cursor:default;">
-          <div class="clink-ico">📍</div>
-          <div class="clink-info"><div class="cn">Location</div><div class="cs">Nairobi, Kenya — Remote Worldwide</div></div>
-        </div>
+        <a class="clink" href="mailto:kuriasimon002@gmail.com"><div class="clink-ico">✉️</div><div class="clink-info"><div class="cn">Email</div><div class="cs">kuriasimon002@gmail.com</div></div><div class="clink-arr">→</div></a>
+        <a class="clink" href="https://linkedin.com/in/simon-kuria-38986334a" target="_blank" rel="noopener"><div class="clink-ico">💼</div><div class="clink-info"><div class="cn">LinkedIn</div><div class="cs">simon-kuria-38986334a</div></div><div class="clink-arr">→</div></a>
+        <a class="clink" href="https://github.com/simono02" target="_blank" rel="noopener"><div class="clink-ico">🐙</div><div class="clink-info"><div class="cn">GitHub</div><div class="cs">github.com/simono02</div></div><div class="clink-arr">→</div></a>
+        <a class="clink" href="https://civetinvestmets.co.ke/" target="_blank" rel="noopener"><div class="clink-ico">🌐</div><div class="clink-info"><div class="cn">Civet Investments</div><div class="cs">civetinvestmets.co.ke — Live</div></div><div class="clink-arr">→</div></a>
+        <a class="clink" href="https://researchpro.co.ke/" target="_blank" rel="noopener"><div class="clink-ico">🔬</div><div class="clink-info"><div class="cn">ResearchPro</div><div class="cs">researchpro.co.ke — Live</div></div><div class="clink-arr">→</div></a>
+        <div class="clink" style="cursor:default;"><div class="clink-ico">📍</div><div class="clink-info"><div class="cn">Location</div><div class="cs">Nairobi, Kenya — Remote Worldwide</div></div></div>
       </div>
     </div>
     <div class="cform reveal d1">
@@ -1003,24 +906,17 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
           <div class="field"><label>Your Name</label><input type="text" name="name" placeholder="Jane Mwangi" required/></div>
           <div class="field"><label>Email Address</label><input type="email" name="email" placeholder="jane@company.com" required/></div>
         </div>
-        <div class="field">
-          <label>Project Type</label>
+        <div class="field"><label>Project Type</label>
           <select name="project_type">
             <option value="">Select a service...</option>
-            <option>Full-Stack Web Application</option>
-            <option>C# / .NET System</option>
-            <option>Mobile App (React Native / Android)</option>
-            <option>Cloud &amp; Azure Deployment</option>
-            <option>AI / LLM Integration</option>
-            <option>Database Design &amp; SQL</option>
-            <option>Automation &amp; Scripting</option>
-            <option>Payment Integration</option>
-            <option>Data Science / Analytics</option>
-            <option>Other / Not Sure Yet</option>
+            <option>Full-Stack Web Application</option><option>Go / Gin API or CLI Tool</option>
+            <option>Elixir / Phoenix Real-Time App</option><option>C# / .NET System</option>
+            <option>Mobile App (React Native / Android)</option><option>Cloud &amp; Azure Deployment</option>
+            <option>AI / LLM Integration</option><option>Database Design &amp; SQL</option>
+            <option>Payment Integration</option><option>Other / Not Sure Yet</option>
           </select>
         </div>
-        <div class="field">
-          <label>Budget Range</label>
+        <div class="field"><label>Budget Range</label>
           <select name="budget">
             <option value="">Approximate budget...</option>
             <option>Under $500</option><option>$500 – $2,000</option>
@@ -1035,9 +931,7 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
   </div>
 </section>
 
-<!-- ================================================================
-     FOOTER
-     ================================================================ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-brand">Simon K. Kuria</div>
   <div class="footer-copy">Designed &amp; Built by <span>SKK</span> · Kenya 🇰🇪 · 2025</div>
@@ -1050,43 +944,39 @@ footer{border-top:1px solid var(--line);padding:3rem 2.5rem;display:flex;justify
   </div>
 </footer>
 
-<!-- ================================================================
-     SCRIPTS
-     ================================================================ -->
 <script>
-/* ---- MARQUEE ---- */
-const marItems=['React','Django','Flask','Python','C# / .NET','Azure','PostgreSQL','SQL Server','OpenAI API','Claude API','Stripe','PayPal','M-Pesa','Docker','GitHub Actions','React Native','Kotlin','Android SDK','LangChain','WebSockets','Celery','REST APIs','TypeScript','EF Core','ASP.NET Core'];
+/* ── MARQUEE ── */
+const marItems=['React','Next.js','Vue 3','Django','Flask','Go / Gin','Elixir / Phoenix','C# / .NET','Python','Azure','PostgreSQL','SQL Server','OpenAI API','Claude API','Stripe','PayPal','M-Pesa','Docker','GitHub Actions','React Native','Kotlin','Android SDK','LangChain','WebSockets','Phoenix LiveView','Pinia','TypeORM','GORM','Ecto','Cobra CLI','jsPDF','TypeScript'];
 const track=document.getElementById('marqueeTrack');
 [...marItems,...marItems].forEach(it=>{
   const d=document.createElement('div');d.className='mitem';
-  d.innerHTML=`<span class="mitem-dot"></span>${it}`;
-  track.appendChild(d);
+  d.innerHTML=`<span class="mitem-dot"></span>${it}`;track.appendChild(d);
 });
 
-/* ---- CURSOR ---- */
-const cur=document.getElementById('cursor');
-const ring=document.getElementById('cursor-ring');
+/* ── CURSOR ── */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{
-  mx=e.clientX;my=e.clientY;
-  cur.style.left=mx+'px';cur.style.top=my+'px';
-});
-(function animRing(){
-  rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;
-  ring.style.left=rx+'px';ring.style.top=ry+'px';
-  requestAnimationFrame(animRing);
-})();
-document.querySelectorAll('a,button,.stab,.proj,.clink,.svc').forEach(el=>{
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function animRing(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
+document.querySelectorAll('a,button,.stab,.proj,.clink,.svc,.filter-btn,.gal-thumb,.proj-visual').forEach(el=>{
   el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
   el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
 });
 
-/* ---- SCROLL ---- */
+/* ── PROGRESS BAR ── */
+const prog=document.getElementById('progress');
 window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  prog.style.width=pct+'%';
   document.getElementById('controls').classList.toggle('scrolled',window.scrollY>30);
+  document.getElementById('backToTop').classList.toggle('show',window.scrollY>400);
 });
 
-/* ---- THEME ---- */
+/* ── BACK TO TOP ── */
+document.getElementById('backToTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ── THEME ── */
 document.querySelectorAll('.theme-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.documentElement.setAttribute('data-theme',btn.dataset.theme);
@@ -1095,7 +985,7 @@ document.querySelectorAll('.theme-btn').forEach(btn=>{
   });
 });
 
-/* ---- SKILL TABS ---- */
+/* ── SKILL TABS ── */
 document.querySelectorAll('.stab').forEach(tab=>{
   tab.addEventListener('click',()=>{
     document.querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
@@ -1106,41 +996,67 @@ document.querySelectorAll('.stab').forEach(tab=>{
   });
 });
 
-/* ---- REVEAL ---- */
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
-},{threshold:0.07,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-/* ---- LIGHTBOX ---- */
-const lightbox=document.getElementById('lightbox');
-const lightboxImg=document.getElementById('lightboxImg');
-const lightboxCaption=document.getElementById('lightboxCaption');
-const lightboxClose=document.getElementById('lightboxClose');
-
-function openLightbox(src,caption){
-  lightboxImg.src=src;
-  lightboxCaption.textContent=caption||'';
-  lightbox.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeLightbox(){
-  lightbox.classList.remove('open');
-  document.body.style.overflow='';
-}
-lightboxClose.addEventListener('click',closeLightbox);
-lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
-
-/* Attach lightbox to all screenshot thumbnails */
-document.querySelectorAll('.proj-screenshot, .proj-visual').forEach(el=>{
-  el.style.cursor='zoom-in';
-  el.addEventListener('click',()=>{
-    const src=el.dataset.src||el.querySelector('img')?.src;
-    const cap=el.dataset.caption||'';
-    if(src)openLightbox(src,cap);
+/* ── PROJECT FILTER ── */
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('#projGrid .proj').forEach(p=>{
+      if(f==='all'){p.removeAttribute('data-hidden');}
+      else{
+        const cats=(p.dataset.cats||'').split(' ');
+        p.setAttribute('data-hidden', cats.includes(f)?'false':'true');
+      }
+    });
   });
 });
+
+/* ── LIGHTBOX ── */
+let lbImages=[],lbIdx=0;
+const lb=document.getElementById('lightbox');
+const lbImg=document.getElementById('lightboxImg');
+const lbCap=document.getElementById('lightboxCaption');
+const lbCtr=document.getElementById('lightboxCounter');
+
+function openLB(imgs,idx){
+  lbImages=imgs;lbIdx=idx;
+  lbImg.src=imgs[idx].src;
+  lbCap.textContent=imgs[idx].caption||'';
+  lbCtr.textContent=imgs.length>1?`${idx+1} / ${imgs.length}`:'';
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){lb.classList.remove('open');document.body.style.overflow='';}
+function navLB(dir){
+  lbIdx=(lbIdx+dir+lbImages.length)%lbImages.length;
+  lbImg.src=lbImages[lbIdx].src;
+  lbCap.textContent=lbImages[lbIdx].caption||'';
+  lbCtr.textContent=lbImages.length>1?`${lbIdx+1} / ${lbImages.length}`:'';
+}
+
+document.getElementById('lightboxClose').addEventListener('click',closeLB);
+document.getElementById('lightboxPrev').addEventListener('click',()=>navLB(-1));
+document.getElementById('lightboxNext').addEventListener('click',()=>navLB(1));
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB();});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeLB();
+  if(e.key==='ArrowLeft')navLB(-1);
+  if(e.key==='ArrowRight')navLB(1);
+});
+
+/* Attach lightbox to gallery thumbnails — grouped per project */
+document.querySelectorAll('.proj').forEach(proj=>{
+  const thumbs=[...proj.querySelectorAll('.gal-thumb, .proj-visual')];
+  const imgs=thumbs.map(t=>({src:t.dataset.src||t.querySelector('img')?.src||'',caption:t.dataset.caption||''})).filter(i=>i.src);
+  thumbs.forEach((t,i)=>{
+    t.addEventListener('click',()=>{if(imgs[i]?.src)openLB(imgs,i);});
+  });
+});
+
+/* ── REVEAL ── */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
